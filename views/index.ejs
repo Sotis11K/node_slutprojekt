@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/assets/index_style.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/app.js" defer></script>
+    <script src="/assets/script/script.js" defer></script>
+    <script type="module" src="/src/functionPlot.js"></script>
+    <script src="https://kit.fontawesome.com/edc27adb51.js" crossorigin="anonymous"></script>
+
+    <title>Graph</title>
+</head>
+<body>
+    <div class="container">
+        <div class="user-coloumn">
+            <div class="settings-container">
+                <div class="settings-block">
+                    <div class="selection-container" onclick="searchUsers()">
+                        <div class="remove">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <p>Search</p>   
+                        </div>
+                        <div class="horizontal"></div>
+                    </div>
+                    <div class="selection-container">
+                        <a href="/settings">
+                            <i class="fa-solid fa-gear"></i>
+                        </a>
+                        <p>Settings</p>
+                    </div>
+                    <div class="selection-container">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <p>Functions</p>
+                    </div>
+                    <div class="selection-container">
+                        <i class="fa-solid fa-calculator"></i>
+                        <p>Calculate</p>
+                    </div>
+                    <div class="selection-container">
+                        <i class="fa-solid fa-clock-rotate-left" onclick="historyReveal()"></i>
+                        <p>History</p>
+                    </div>
+                    </div>
+                <div class="testing-container">
+                    <i onclick="settings()" class="fa-solid fa-bars button"></i>
+                </div>
+            </div>
+            <h1>Graph Visualizer</h1>
+            <div class="graph-input">
+                <input id="graphFunction" type="text" placeholder="Example: x^2...">
+                <button class="submit">Graph</button>
+            </div>
+
+            <div class="category-container">
+                <div class="history">
+                    <h2>History</h2>
+                    <div class="history-container">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+        <div id="root"></div>
+    </div>
+
+
+
+
+
+</body>
+</html>

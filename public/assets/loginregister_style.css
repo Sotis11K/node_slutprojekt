@@ -1,0 +1,90 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom, hsl(0, 0%, 25%), white);
+  gap: 2rem;
+}
+.container .back {
+  position: absolute;
+  margin: 2rem;
+  top: 0;
+  left: 0;
+  background-color: hsl(200, 91%, 36%);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 0 3px 0px #2BB2F5;
+}
+.container .back:hover {
+  box-shadow: 0 0 5px 2px #2BB2F5;
+}
+.container h1 {
+  color: white;
+}
+.container .login-block {
+  background-color: hsl(0, 0%, 14%);
+  height: 100%;
+  width: 30%;
+  box-shadow: 0px 0px 30px 5px black;
+  display: grid;
+  place-items: center;
+}
+.container .login-block form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 1rem;
+  height: 100%;
+  width: 60%;
+  font-size: 1.5rem;
+}
+.container .login-block form input {
+  width: 100%;
+  height: 2.5rem;
+  outline: none;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 3px 2px #2BB2F5;
+  text-indent: 10px;
+  background-color: black;
+  color: white;
+}
+.container .login-block form input:focus {
+  box-shadow: 0 0 6px 4px #2BB2F5;
+}
+.container .login-block form button, .container .login-block form a {
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  outline: none;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 3px 2px #2BB2F5;
+  text-indent: 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.3rem 0px;
+  cursor: pointer;
+}
+.container .login-block form button:hover, .container .login-block form a:hover {
+  box-shadow: 0 0 6px 4px #2BB2F5;
+}/*# sourceMappingURL=loginregister_style.css.map */
