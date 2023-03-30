@@ -15,14 +15,10 @@
         <div class="settings-container">
             <div class="theme settings">
                 <h2>Themes</h2>
-                <p>Select your desired theme:</p>
-                <form action="/post" method="POST" class="colors">
-                    <button for="white" onclick="favColor()" value="ff0000" id="red" ></button>
-                    <button onclick="favColor()" value="0000ff" id="blue"></button>
-                    <button onclick="favColor()" value="ffff00" id="yellow"></button>
-                    <button onclick="favColor()" value="ffc0cb" id="pink"></button>
-                    <button onclick="favColor()" value="ffffff" id="white"></button>
-                    <button onclick="favColor()" value="000000" id="black"></button>
+                <form action="/settings" method="POST" class="colors">
+                    <label for="color">Select your desired theme</label>
+                    <input type="color" name="color" id="color">
+                    <button type="submit">Submit</button>
                 </form>
             </div>
 
