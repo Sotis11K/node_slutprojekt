@@ -1,8 +1,8 @@
 
-var y = 'x'
+var y = 'x^2'
 
 
-
+test("test");
 
 
 var options={
@@ -20,14 +20,9 @@ var options={
 }
 
 
-
 var counter = 0;
-
 function settings(){
-
     counter++;
-    
-
     if(counter%2 == 0 )
     {
         document.querySelector(".settings-block").style="visibility:hidden;transition-duration: 0.4s;width:0%;"
@@ -37,8 +32,7 @@ function settings(){
             element.style="margin: 0;";
         }
         iconRemover()
-        document.querySelector(".horizontal").style="display: none;"
-        
+        document.querySelector(".horizontal").style="display: none;"  
     }
     else if(counter%2 == 1)
     {
@@ -46,60 +40,8 @@ function settings(){
         document.querySelector(".settings-container").style="border:none;"
         iconShower()
     }
-    
-    
-    
 }
 
-
-var submit = document.querySelector(".submit")
-submit.addEventListener("click", inputReader)
-
-function inputReader(){
-    if(document.querySelector('#graphFunction').value == ""){
-        console.log("ingen sträng")
-        return
-    }
-    else{
-        var y = '-2'
-        console.log(options.data[0].fn)
-
-        options.data[0] = y
-        options={
-            data: [
-                {
-                fn: y, color: 'blue', opacity: 1
-            }]
-        }
-    }
-    
-
-
-        
-        /*graph = document.querySelector("#graphFunction").value
-        console.log("har sträng")
-        console.log(graph)
-        console.log(options)
-        console.log(typeof graph)  
-        var options ={
-            target: '#root',
-            title: 'Graf',
-            width: 700,
-            height: 500,
-            xAxis: { domain: [-10, 10] },
-            yAxis: { domain: [-10, 10] },
-            grid: true,
-            data: [
-                {
-                fn: graph, color: 'blue', opacity: 1
-            }
-        ]
-    }
-    
-    functionPlot(options);*/
-
-
-};
 
 counter = 0;
 function searchUsers(){
