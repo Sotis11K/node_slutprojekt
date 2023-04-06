@@ -74,6 +74,10 @@ app.get('/', (req, res) =>{
     res.render('index')
 })
 
+app.get('/logout', (req, res) =>{
+    res.render('logout')
+})
+
  app.get('/register', function(req,res){
     res.render('register')
  });

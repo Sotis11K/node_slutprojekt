@@ -1,24 +1,70 @@
-
-var y = 'x'
-
-
-
-
-
-var options={
+var options ={
     target: '#root',
     title: 'Graf',
     width: 700,
     height: 500,
-    xAxis: { domain: [-5, 5] },
-    yAxis: { domain: [-5, 5] },
+    xAxis: { domain: [-10, 10] },
+    yAxis: { domain: [-10, 10] },
     grid: true,
     data: [
         {
-        fn: y, color: 'blue', opacity: 1
-    }]
+        fn: 'x^2', color: 'blue', opacity: 1
+    }
+]
 }
 
+
+function inputReader(){
+    if(document.querySelector('#graphFunction').value == ""){
+        console.log("ingen sträng")
+        var options =null
+    }
+    else{
+        console.log(options.data[0].fn)
+
+        var options ={
+            target: '#root',
+            title: 'Graf',
+            width: 700,
+            height: 500,
+            xAxis: { domain: [-10, 10] },
+            yAxis: { domain: [-10, 10] },
+            grid: true,
+            data: [
+                {
+                fn: 'x', color: 'blue', opacity: 1
+            }
+        ]
+    }
+    }
+    
+
+
+        
+        /*graph = document.querySelector("#graphFunction").value
+        console.log("har sträng")
+        console.log(graph)
+        console.log(options)
+        console.log(typeof graph)  
+        var options ={
+            target: '#root',
+            title: 'Graf',
+            width: 700,
+            height: 500,
+            xAxis: { domain: [-10, 10] },
+            yAxis: { domain: [-10, 10] },
+            grid: true,
+            data: [
+                {
+                fn: graph, color: 'blue', opacity: 1
+            }
+        ]
+    }
+    
+    functionPlot(options);*/
+
+
+};
 
 
 var counter = 0;
@@ -52,54 +98,6 @@ function settings(){
 }
 
 
-var submit = document.querySelector(".submit")
-submit.addEventListener("click", inputReader)
-
-function inputReader(){
-    if(document.querySelector('#graphFunction').value == ""){
-        console.log("ingen sträng")
-        return
-    }
-    else{
-        var y = '-2'
-        console.log(options.data[0].fn)
-
-        options.data[0] = y
-        options={
-            data: [
-                {
-                fn: y, color: 'blue', opacity: 1
-            }]
-        }
-    }
-    
-
-
-        
-        /*graph = document.querySelector("#graphFunction").value
-        console.log("har sträng")
-        console.log(graph)
-        console.log(options)
-        console.log(typeof graph)  
-        var options ={
-            target: '#root',
-            title: 'Graf',
-            width: 700,
-            height: 500,
-            xAxis: { domain: [-10, 10] },
-            yAxis: { domain: [-10, 10] },
-            grid: true,
-            data: [
-                {
-                fn: graph, color: 'blue', opacity: 1
-            }
-        ]
-    }
-    
-    functionPlot(options);*/
-
-
-};
 
 counter = 0;
 function searchUsers(){
@@ -140,10 +138,8 @@ function searchUsers(){
 function settingsReveal(){}
 function functionsReveal(){}
 function calculateReveal(){}
-function historyReveal(){
-    document.querySelector(".history").style="visibility: visible;"
-    iconRemover()
-    settings()
+function logoutReveal(){
+    window.location.replace("/logout")
 }
 
 
