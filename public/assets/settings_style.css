@@ -29,10 +29,10 @@ html, body {
   padding: 0.5rem 1rem;
   text-decoration: none;
   color: white;
-  box-shadow: 0 0 3px 0px #2BB2F5;
+  box-shadow: 0 0 3px 1px #2BB2F5;
 }
 .container .back:hover {
-  box-shadow: 0 0 5px 2px #2BB2F5;
+  box-shadow: 0 0 5px 3px #2BB2F5;
 }
 .container h1 {
   color: white;
@@ -48,37 +48,33 @@ html, body {
   margin: 2rem;
   background-color: hsl(0, 0%, 35%);
 }
+.container .settings-container .logout {
+  color: white;
+  background-color: red;
+  margin-inline: auto;
+  width: -moz-max-content;
+  width: max-content;
+  bottom: 0;
+  border-radius: 0.25rem;
+  padding: 6px 10px;
+  box-shadow: 0 0 3px 1px white;
+}
+.container .settings-container .logout:hover {
+  box-shadow: 0 0 5px 3px white;
+  cursor: pointer;
+}
 .container .settings-container h2 {
   color: white;
 }
 .container .settings-container .colors {
   display: flex;
   gap: 1rem;
+  background-color: #0000ff;
 }
-.container .settings-container .colors button {
-  width: 1rem;
-  height: 1rem;
+.container .settings-container .colors label {
   outline: none;
   border: none;
 }
-.container .settings-container .colors button:hover {
+.container .settings-container .colors label:hover {
   cursor: pointer;
-}
-.container .settings-container .colors #red {
-  background-color: #ff0000;
-}
-.container .settings-container .colors #blue {
-  background-color: #0000ff;
-}
-.container .settings-container .colors #yellow {
-  background-color: #ffff00;
-}
-.container .settings-container .colors #pink {
-  background-color: #ffc0cb;
-}
-.container .settings-container .colors #white {
-  background-color: #ffffff;
-}
-.container .settings-container .colors #black {
-  background-color: #000000;
 }/*# sourceMappingURL=settings_style.css.map */

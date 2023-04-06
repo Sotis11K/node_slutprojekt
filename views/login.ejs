@@ -13,14 +13,14 @@
         <div class="login-block">
             <a class="back" href="/">Back</a> 
             <h1>Login</h1>
-            <% if (messages.error) { %>
+            <!--<% if (messages.error) { %>
                 <%= messages.error %>
-            <% } %>
+            <% } %>-->
             <form action="/login" method="POST">
                 <label for="email">Email:</label>
-                <input type="email" name="email">
+                <input type="email" name="email" id="email">
                 <label for="password">Password:</label>
-                <input type="password">
+                <input type="password" name="password" id="password">
                 <button type="submit">Login</button>
                 <a href="/register">Sign up</a>
             </form>
