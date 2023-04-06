@@ -1,70 +1,4 @@
-var options ={
-    target: '#root',
-    title: 'Graf',
-    width: 700,
-    height: 500,
-    xAxis: { domain: [-10, 10] },
-    yAxis: { domain: [-10, 10] },
-    grid: true,
-    data: [
-        {
-        fn: 'x^2', color: 'blue', opacity: 1
-    }
-]
-}
 
-
-function inputReader(){
-    if(document.querySelector('#graphFunction').value == ""){
-        console.log("ingen sträng")
-        var options =null
-    }
-    else{
-        console.log(options.data[0].fn)
-
-        var options ={
-            target: '#root',
-            title: 'Graf',
-            width: 700,
-            height: 500,
-            xAxis: { domain: [-10, 10] },
-            yAxis: { domain: [-10, 10] },
-            grid: true,
-            data: [
-                {
-                fn: 'x', color: 'blue', opacity: 1
-            }
-        ]
-    }
-    }
-    
-
-
-        
-        /*graph = document.querySelector("#graphFunction").value
-        console.log("har sträng")
-        console.log(graph)
-        console.log(options)
-        console.log(typeof graph)  
-        var options ={
-            target: '#root',
-            title: 'Graf',
-            width: 700,
-            height: 500,
-            xAxis: { domain: [-10, 10] },
-            yAxis: { domain: [-10, 10] },
-            grid: true,
-            data: [
-                {
-                fn: graph, color: 'blue', opacity: 1
-            }
-        ]
-    }
-    
-    functionPlot(options);*/
-
-
-};
 
 
 var counter = 0;
@@ -139,7 +73,7 @@ function settingsReveal(){}
 function functionsReveal(){}
 function calculateReveal(){}
 function logoutReveal(){
-    window.location.replace("/logout")
+    window.location.replace("/login")
 }
 
 
