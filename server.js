@@ -11,8 +11,6 @@ const session = require('express-session')
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
-// const cookieParser = require('cookie-parser');
-// app.use(cookieParser());
 
 
 // initializedPassport(passport, email => {
@@ -23,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 const path = require('path');
 const upload = require('./uploads');
 // const { Passport } = require('passport');
-// app.use(express.static(path.resolve('./public')));
+ app.use(express.static(path.resolve('./public')));
 
 
 
@@ -37,16 +35,9 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-
-app.use(passport.initialize())
-app.use(passport.session())
 */
+
 app.set('view engine', 'ejs');
-
-
-
-
-
 
 app.post('/login', async function(req, res) {
     const email = req.body.email;
@@ -79,11 +70,15 @@ app.get('/settings', function(req, res){
     res.render('settings')
 })
 
+app.get('/', (req, res) =>{
+    res.render('index')
+})
 
  app.get('/register', function(req,res){
     res.render('register')
  });
-/*
+
+
 app.post('/settings', (req, res) =>{
     const color = req.body.color
     const sqlInstert = "INSERT INTO user_settings (themeColor) VALUES (?);"
@@ -100,7 +95,7 @@ app.get('/settings', (res, req) =>{
             res.render('index', obj)
         }
     });
-})*/
+})
     
 
  app.post('/register', async (req,res) =>{
