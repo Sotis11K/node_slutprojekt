@@ -1,4 +1,10 @@
-function favColor(){
-    var white = document.getElementById("white").value
-    console.log(white)
-}
+
+var theInput = document.getElementById("pageColor");
+
+theInput.addEventListener("input", function(){
+  var theColor = theInput.value;
+  
+  document.querySelector(".container").style.background = theColor
+}, false);
+
+

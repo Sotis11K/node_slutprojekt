@@ -1,6 +1,6 @@
 import functionPlot from 'function-plot'
 
-var y = ''
+var y = 'x^2'
 
 var options={
   target: '#root',
