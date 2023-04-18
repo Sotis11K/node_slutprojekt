@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const app = express();
 const db = require('./connection');
@@ -73,23 +71,20 @@ app.get('/logout', (req, res) =>{
  });
 
 app.post('/settings', (req, res) =>{
-    const color = req.body.color
-    const sqlInstert = "INSERT INTO user_settings (themeColor) VALUES (?);"
-    db.query(sqlInstert, [color])
+    try{
+
+        const color = req.body.color
+        const sqlInstert = "INSERT INTO user_settings (themeColor) VALUES (?);"
+        db.query(sqlInstert, [color])
+        res.redirect("/settings")
+    }
+    catch{
+        res.redirect('/settings')
+    }
+    
 })
 
-app.get('/settings', (res, req) =>{
-    let sql = 'SELECT * FROM user_settings';
-    db.query(sql, function(err, results){
-        if(err) {
-            throw err;
-        } else {
-            obj = {data: results};
-            res.render('index', obj)
-        }
-    });
-})
-    
+
 
  app.post('/register', async (req,res) =>{
      try{

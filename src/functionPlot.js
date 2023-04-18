@@ -1,5 +1,5 @@
 import functionPlot from 'function-plot'
-var y = 'x'
+var y = 'x^2'
 var x1 = ''
 var x2 = ''
 var options={
