@@ -140,30 +140,37 @@ body{
                 .calculate-selection{
                     background-color: blue;
                     overflow: auto;
-                    width: 80%;
+                    min-width: 80%;
                     height: 16rem;
                     margin-top: 4%;
-                    gap: 1rem;
+                    gap: 2rem;
                     padding: 10px;
                     display: grid;
-                    grid-template-columns: repeat(5, 2fr);
-                    button{
+                    grid-template-columns: repeat(4, 20%);
+                    
+                    .math-calc{
                         height: 5rem;
-                        background-color: yellow;
+                        background-color: red;
                         &:hover{
                             cursor: pointer;
-                            background-color: white;
                         }
+                        
+                       
                     }
-                    p{
-                        color: white;
-                        background-color: hsl(0, 0%, 40%);
-                        height: 2rem;
-                        font-size: 1.75rem;
-                        text-indent: 1rem;
-                        border-radius: 0.25rem;
+                    .integral-container, .tangent-container{
+                        display: none;
+                        background-color: red;
                         width: 100%;
-                        box-shadow: 0 0 2px 2px hsl(0, 0%, 40%);
+                        height: max-content;
+                        input{
+                            height: 5rem;
+                            width: 25%;
+                            background-color: yellow;
+                            &:hover{
+                                cursor: pointer;
+                                background-color: white;
+                            }
+                        }
                     }
                 }
             }

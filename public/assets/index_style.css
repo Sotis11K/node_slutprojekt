@@ -144,31 +144,36 @@ body {
 .container .user-coloumn .category-container .calculate-container .calculate-selection {
   background-color: blue;
   overflow: auto;
-  width: 80%;
+  min-width: 80%;
   height: 16rem;
   margin-top: 4%;
-  gap: 1rem;
+  gap: 2rem;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(5, 2fr);
+  grid-template-columns: repeat(4, 20%);
 }
-.container .user-coloumn .category-container .calculate-container .calculate-selection button {
+.container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc {
   height: 5rem;
+  background-color: red;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc:hover {
+  cursor: pointer;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container {
+  display: none;
+  background-color: red;
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container input {
+  height: 5rem;
+  width: 25%;
   background-color: yellow;
 }
-.container .user-coloumn .category-container .calculate-container .calculate-selection button:hover {
+.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container input:hover {
   cursor: pointer;
   background-color: white;
-}
-.container .user-coloumn .category-container .calculate-container .calculate-selection p {
-  color: white;
-  background-color: hsl(0, 0%, 40%);
-  height: 2rem;
-  font-size: 1.75rem;
-  text-indent: 1rem;
-  border-radius: 0.25rem;
-  width: 100%;
-  box-shadow: 0 0 2px 2px hsl(0, 0%, 40%);
 }
 .container .user-coloumn .category-container h2 {
   text-align: center;
