@@ -131,22 +131,30 @@ body{
             margin-top: 10%;
             width: 100%;
             height: 100%;
-            .history{
+            .calculate-container{
                 width: 100%;
                 height: max-content;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                .history-container{
+                .calculate-selection{
+                    background-color: blue;
                     overflow: auto;
                     width: 80%;
                     height: 16rem;
                     margin-top: 4%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
                     gap: 1rem;
                     padding: 10px;
+                    display: grid;
+                    grid-template-columns: repeat(5, 2fr);
+                    button{
+                        height: 5rem;
+                        background-color: yellow;
+                        &:hover{
+                            cursor: pointer;
+                            background-color: white;
+                        }
+                    }
                     p{
                         color: white;
                         background-color: hsl(0, 0%, 40%);

@@ -133,7 +133,7 @@ body {
   width: 100%;
   height: 100%;
 }
-.container .user-coloumn .category-container .history {
+.container .user-coloumn .category-container .calculate-container {
   width: 100%;
   height: -moz-max-content;
   height: max-content;
@@ -141,18 +141,26 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.container .user-coloumn .category-container .history .history-container {
+.container .user-coloumn .category-container .calculate-container .calculate-selection {
+  background-color: blue;
   overflow: auto;
   width: 80%;
   height: 16rem;
   margin-top: 4%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 1rem;
   padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
 }
-.container .user-coloumn .category-container .history .history-container p {
+.container .user-coloumn .category-container .calculate-container .calculate-selection button {
+  height: 5rem;
+  background-color: yellow;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection button:hover {
+  cursor: pointer;
+  background-color: white;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection p {
   color: white;
   background-color: hsl(0, 0%, 40%);
   height: 2rem;

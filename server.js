@@ -23,19 +23,8 @@ const upload = require('./uploads');
 // const { Passport } = require('passport');
  app.use(express.static(path.resolve('./public')));
 
+ 
 
-
-/*
-var obj = {};
-
-app.use(express.urlencoded({ extended: false }))
-app.use(flash())
-app.use(session({
-    secret: '34SDgsdgspxxxxxxxdfsG', // just a long random string
-    resave: false,
-    saveUninitialized: true
-}));
-*/
 
 app.set('view engine', 'ejs');
 
@@ -54,7 +43,11 @@ app.post('/login', async function(req, res) {
             const user = results[0];
             const isMatch = await bcrypt.compare(password, user.password);
             if (isMatch) {
+<<<<<<< HEAD
                 res.redirect("/")
+=======
+                res.redirect('/')
+>>>>>>> 5c6ebe359258ed497b45567c065e9ccd9a08dd29
             } else {
                 res.status(401).send("Email or password is incorrect.");
             }
@@ -70,9 +63,6 @@ app.get('/settings', function(req, res){
     res.render('settings')
 })
 
-app.get('/', (req, res) =>{
-    res.render('index')
-})
 
 app.get('/logout', (req, res) =>{
     res.render('logout')
@@ -82,6 +72,9 @@ app.get('/logout', (req, res) =>{
     res.render('register')
  });
 
+ app.get('/', function(req,res){
+    res.render('index')
+ });
 
 app.post('/settings', (req, res) =>{
     try{
@@ -102,6 +95,7 @@ app.post('/settings', (req, res) =>{
  app.post('/register', async (req,res) =>{
      try{
          const hashedPassword = await bcrypt.hash(req.body.password, 11)
+         const password = req.body.password
          const username = req.body.username;
          const email = req.body.email;
          const sqlInstert = "INSERT INTO users (username, email, password) VALUES (?, ?, ?);"
