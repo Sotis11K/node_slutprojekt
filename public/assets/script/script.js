@@ -1,6 +1,8 @@
 
 
 
+
+
 var counter = 0;
 
 function settings(){
@@ -66,6 +68,30 @@ function searchUsers(){
 
     
 }
+
+
+function calcOption(option){
+    var elements = document.querySelectorAll(".math-calc")
+    for (const element of elements){
+        element.style.display="none"
+    }
+    const chosenCalc = document.querySelector("." + option + "-container").style.display="block"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

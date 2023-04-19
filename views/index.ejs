@@ -11,7 +11,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="/app.js" defer></script>
     <script src="/assets/script/script.js" defer></script>
-    <script type="module" src="/src/functionPlot.js"></script>
+    <script type="module" src="/src/functionPlot.js" defer></script>
     <script src="https://kit.fontawesome.com/edc27adb51.js" crossorigin="anonymous"></script>
 
     <title>Graph</title>
@@ -54,15 +54,65 @@
             <h1>Graph Visualizer</h1>
             <div class="graph-input">
                 <input id="graphFunction" type="text" placeholder="Example: x^2...">
-                <button class="submit" onclick="inputReader()">Submit</button>
+                <button class="submit">Submit</button>
             </div>
 
             <div class="category-container">
                 <div class="calculate-container">
                     <h2>Calculate</h2>
                     <div class="calculate-selection">
-                        <input id="x1" type="number">
-                        <input id="x2" type="number">
+                        
+                        
+                        <!-- ## OPTIONS ##  -->
+
+                        <button class="math-calc" onclick="calcOption('y')"></button>
+                        <button class="math-calc" onclick="calcOption('integral')"></button>
+                        <button class="math-calc" onclick="calcOption('tangent')"></button>
+                        <button class="math-calc" onclick="calcOption('secant')"></button>
+                        <button class="math-calc" onclick="calcOption('derivative')"></button>
+                        <button class="math-calc" onclick="calcOption('vector')"></button>
+                        <button class="math-calc" onclick="calcOption()"></button>
+                        <button class="math-calc" onclick="calcOption()"></button>
+                        <button class="math-calc" onclick="calcOption()"></button>
+                        <button class="math-calc" onclick="calcOption()"></button>
+                        <button class="math-calc" onclick="calcOption()"></button>
+                        <button class="math-calc" onclick="calcOption()"></button>
+                        <button class="math-calc" onclick="calcOption()"></button>
+
+                        <!-- ## DISPLAYS ##  -->
+
+                        <div class="y-container">
+                            
+                        </div>
+
+                        <div class="integral-container">
+                            <input id="x1" type="number">
+                            <input id="x2" type="number">
+                        </div>
+
+                        <div class="tangent-container">
+                            <button value="1" id="tangent-activate">Activate</button>
+                        </div>
+
+                        <div class="secant-container">
+                            
+                        </div>
+
+                        <div class="derivative-container">
+                            
+                        </div>
+
+                        <div class="vector-container">
+                            
+                        </div>
+
+
+
+
+
+
+
+
                     </div>
                     
                 </div>

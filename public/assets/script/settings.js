@@ -1,4 +1,3 @@
-
 var theInput = document.getElementById("pageColor");
 
 theInput.addEventListener("input", function(){
@@ -6,5 +5,3 @@ theInput.addEventListener("input", function(){
   
   document.querySelector(".container").style.background = theColor
 }, false);
-
-
