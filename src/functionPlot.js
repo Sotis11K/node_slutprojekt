@@ -129,8 +129,37 @@ function inputReader(){
                     grid: true,
                     data: [
                         {
-                            fn: y, color: 'blue'
+                            fn: "x^2", color: 'blue',
+                            derivative:{
+                                fn: "2x",
+                                updateOnMouseMove: true
+                            }
                         }]
+                    }
+        }
+
+
+        else if(mathOption == "secant"){
+            console.log(mathOption)
+                var y = document.querySelector('#graphFunction').value;
+                options={
+                    target: '#root',
+                    title: 'Graf',
+                    width: 700,
+                    height: 500,
+                    xAxis: { domain: [-5, 5] },
+                    yAxis: { domain: [-5, 5] },
+                    grid: true,
+                    data: [{
+                        fn: 'x^2',
+                        secants: [{
+                          x0: 2,
+                          updateOnMouseMove: true
+                        }, {
+                          x0: -2,
+                          updateOnMouseMove: true
+                        }]
+                      }]
                     }
         }
                 
