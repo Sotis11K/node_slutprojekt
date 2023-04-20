@@ -41,11 +41,7 @@ app.post('/login', async function(req, res) {
             const user = results[0];
             const isMatch = await bcrypt.compare(password, user.password);
             if (isMatch) {
-<<<<<<< HEAD
-                res.redirect("/")
-=======
                 res.redirect('/')
->>>>>>> 5c6ebe359258ed497b45567c065e9ccd9a08dd29
             } else {
                 res.status(401).send("Email or password is incorrect.");
             }

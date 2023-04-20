@@ -75,6 +75,7 @@ function calcOption(option){
     for (const element of elements){
         element.style.display="none"
     }
+    document.getElementsByClassName('calculate-selection')[0].dataset.calc = option;
     const chosenCalc = document.querySelector("." + option + "-container").style.display="block"
 }
 

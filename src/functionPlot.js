@@ -4,6 +4,8 @@ var y = 'x^2'
 
 var x1 = ''
 var x2 = ''
+
+
 var options={
     target: '#root',
     title: 'Graf',
@@ -14,9 +16,7 @@ var options={
     grid: true,
     data: [
         {
-        fn: y, color: 'blue',
-        range: [x1,x2],
-        closed: true
+        fn: y, color: 'blue'
     }]
 }
 
@@ -27,24 +27,98 @@ window.onload = (event) => {
   submit.addEventListener("click", inputReader)
   functionPlot(options)
 };
-var tangent = document.querySelector('#tangent-activate').value;
 function inputReader(){
     if(document.querySelector('#graphFunction').value == ""){
         console.log("ingen sträng")
         return
     }
     else{
+        var mathOption = document.querySelector('.calculate-selection').dataset.calc;
+        if(mathOption == undefined || mathOption == null || mathOption == ""){
+            var y = document.querySelector('#graphFunction').value;
+            options={
+                target: '#root',
+                title: 'Graf',
+                width: 700,
+                height: 500,
+                xAxis: { domain: [-5, 5] },
+                yAxis: { domain: [-5, 5] },
+                grid: true,
+                data: [
+                    {
+                        fn: y, color: 'blue'
+                    }]
+            }
+        }
+
+            else if(mathOption == "y"){
+                console.log(mathOption)
+                var y = document.querySelector('#graphFunction').value;
+                options={
+                    target: '#root',
+                    title: 'Graf',
+                    width: 700,
+                    height: 500,
+                    xAxis: { domain: [-5, 5] },
+                    yAxis: { domain: [-5, 5] },
+                    grid: true,
+                    data: [
+                        {
+                            fn: y, color: 'blue'
+                        }]
+                }
+            }
+                        
 
 
-        // DOM FÖR ALLA BERÄKNINGAR
+            else if(mathOption == "integral"){
 
-        var y = document.querySelector('#graphFunction').value;
-        var x1 = document.querySelector('#x1').value;
-        var x2 = document.querySelector('#x2').value;
+                console.log(mathOption)
+
+                var y = document.querySelector('#graphFunction').value;
+                var x1 = document.querySelector('#x1').value;
+                var x2 = document.querySelector('#x2').value;
+
+                if(x1 == '' || x2 == '' || x1>x2 || x1==x2){
+                    options={
+                        target: '#root',
+                        title: 'Graf',
+                        width: 700,
+                        height: 500,
+                        xAxis: { domain: [-5, 5] },
+                        yAxis: { domain: [-5, 5] },
+                        grid: true,
+                        data: [
+                            {
+                                fn: y, color: 'blue'
+                            }]
+                    }
+                }
+                    else if(!x1 == '' || !x2 == ''){
+                        options={
+                            target: '#root',
+                            title: 'Graf',
+                            width: 700,
+                            height: 500,
+                            xAxis: { domain: [-5, 5] },
+                            yAxis: { domain: [-5, 5] },
+                            grid: true,
+                            data: [
+                                {
+                                    fn: y, color: 'blue',
+                                    range: [x1, x2],
+                                    closed: true
+                                }]
+                        }
+                    }
+            }
+      
+    
 
 
-            if(x1 == '' || x2 == '' || x1>x2 || x1==x2){
-                console.log("x1 and x2 = null")
+        else if(mathOption == "tangent"){
+            console.log(mathOption)
+                var y = document.querySelector('#graphFunction').value;
                 options={
                     target: '#root',
                     title: 'Graf',
@@ -58,31 +132,12 @@ function inputReader(){
                             fn: y, color: 'blue'
                         }]
                     }
-                }
-                else if(!x1 == '' || !x2 == ''){
-                    options={
-                        target: '#root',
-                        title: 'Graf',
-                        width: 700,
-                        height: 500,
-                        xAxis: { domain: [-5, 5] },
-                        yAxis: { domain: [-5, 5] },
-                        grid: true,
-                        data: [
-                            {
-                                fn: y, color: 'blue',
-                                range: [x1, x2],
-                                closed: true
-                            }]
-                        }
-                }
+        }
                 
-
-        
-
-
         functionPlot(options);
     }
+
+
 };
 
 
@@ -123,3 +178,4 @@ else if(tangent == 1){
         }
         tangent++;
 }*/
+
