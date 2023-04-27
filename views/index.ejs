@@ -11,6 +11,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="/app.js" defer></script>
     <script src="/assets/script/script.js" defer></script>
+    <script type="module" src="/src/math.js" defer></script>
     <script type="module" src="/src/functionPlot.js" defer></script>
     <script src="https://kit.fontawesome.com/edc27adb51.js" crossorigin="anonymous"></script>
 
@@ -65,13 +66,13 @@
                         
                         <!-- ## OPTIONS ##  -->
 
-                        <button class="math-calc" onclick="calcOption('y')"></button>
-                        <button class="math-calc" onclick="calcOption('integral')"></button>
-                        <button class="math-calc" onclick="calcOption('tangent')"></button>
-                        <button class="math-calc" onclick="calcOption('secant')"></button>
-                        <button class="math-calc" onclick="calcOption('derivative')"></button>
-                        <button class="math-calc" onclick="calcOption('vector')"></button>
-                        <button class="math-calc" onclick="calcOption('Annotations')"></button>
+                        <button class="math-calc" onclick="calcOption('y')">X value</button>
+                        <button class="math-calc" onclick="calcOption('integral')">Integral</button>
+                        <button class="math-calc" onclick="calcOption('tangent')">Tangent</button>
+                        <button class="math-calc" onclick="calcOption('secant')">Secant</button>
+                        <button class="math-calc" onclick="calcOption('derivative')">Derivative</button>
+                        <button class="math-calc" onclick="calcOption('vector')">Vector</button>
+                        <button class="math-calc" onclick="calcOption('annotations')">Annotations</button>
                         
 
                         <!-- ## DISPLAYS ##  -->
@@ -81,16 +82,19 @@
                         </div>
 
                         <div class="integral-container">
-                            <input id="x1" type="number">
-                            <input id="x2" type="number">
+                            <input class="x1i" type="number">
+                            <input class="x2i" type="number">
                         </div>
 
                         <div class="tangent-container">
-                            <button value="1" id="tangent-activate">Activate</button>
+                            <button id="tangent-activate">Activate tangent</button>
+                            <button id="tangent-deactivate">Deactivate tangent</button>
+
                         </div>
 
                         <div class="secant-container">
-                            
+                            <input class="x1s" type="number">
+                            <input class="x2s" type="number">
                         </div>
 
                         <div class="derivative-container">
@@ -98,7 +102,18 @@
                         </div>
 
                         <div class="vector-container">
-                            
+                            x1<input class="x1v" type="number">
+                            y1<input class="y1v" type="number">
+
+
+                            x2<input class="x2v" type="number">
+                            y2<input class="y2v" type="number">
+                            <button id="updateVec">Update</button>
+
+                        </div>
+
+                        <div class="annotations-container">
+
                         </div>
 
 
@@ -125,7 +140,5 @@
         </div>
         <div id="root"></div>
     </div>
-
-
 </body>
 </html>

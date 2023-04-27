@@ -159,19 +159,19 @@ body {
 .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc:hover {
   cursor: pointer;
 }
-.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container {
+.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container {
   display: none;
   background-color: red;
   width: 100%;
   height: -moz-max-content;
   height: max-content;
 }
-.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container input {
+.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container input {
   height: 5rem;
-  width: 25%;
+  width: 100%;
   background-color: yellow;
 }
-.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container input:hover {
+.container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container input:hover {
   cursor: pointer;
   background-color: white;
 }
@@ -201,6 +201,10 @@ text {
 .tick line {
   stroke: white;
   opacity: 0.3;
+}
+
+.annotations text {
+  stroke: white;
 }
 
 .origin {

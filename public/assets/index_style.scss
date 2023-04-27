@@ -157,14 +157,14 @@ body{
                         
                        
                     }
-                    .integral-container, .tangent-container{
-                        display: none;
+                    .integral-container, .tangent-container, .secant-container, .vector-container, .annotations-container{
+                        display: none; 
                         background-color: red;
                         width: 100%;
                         height: max-content;
                         input{
                             height: 5rem;
-                            width: 25%;
+                            width: 100%;
                             background-color: yellow;
                             &:hover{
                                 cursor: pointer;
@@ -209,9 +209,16 @@ body{
 
    .tick line {
     stroke: white;
-    opacity: 0.3; 
+    opacity: 0.3;
    }
- 
+
+   .annotations{
+        text{
+            stroke: white;
+        }
+   }
+
+
    .origin{
     stroke: white;
     opacity: 0.6;
@@ -221,3 +228,4 @@ body{
     stroke: white;
     opacity: 0.6;
    }
+
