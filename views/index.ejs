@@ -73,12 +73,20 @@
                         <button class="math-calc" onclick="calcOption('derivative')">Derivative</button>
                         <button class="math-calc" onclick="calcOption('vector')">Vector</button>
                         <button class="math-calc" onclick="calcOption('annotations')">Annotations</button>
+
                         
 
                         <!-- ## DISPLAYS ##  -->
 
                         <div class="y-container">
-                            
+                            <input class="x-value" type="number">
+                            <button class="xVal-update">Calculate</button>
+                            <div class="xVal-output"></div>
+
+                            <p>simplify</p>
+                            <input type="text" class="simplify-string">
+                            <button class="xVal-update">Calculate</button>
+                            <div class="simplify-container"></div>
                         </div>
 
                         <div class="integral-container">
@@ -89,7 +97,6 @@
                         <div class="tangent-container">
                             <button id="tangent-activate">Activate tangent</button>
                             <button id="tangent-deactivate">Deactivate tangent</button>
-
                         </div>
 
                         <div class="secant-container">
@@ -98,7 +105,9 @@
                         </div>
 
                         <div class="derivative-container">
-                            
+                            <div class="deriv-output"></div>
+                            <input type="number" class="x-deriv">
+                            <button class="deriv-update">Update</button>
                         </div>
 
                         <div class="vector-container">
