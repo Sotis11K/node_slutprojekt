@@ -75,8 +75,7 @@ function inputReader(){
                 var y = document.querySelector('#graphFunction').value;
                 var xVal = document.querySelector('.x-value').value;
 
-
-               
+                
 
 
 
@@ -97,18 +96,33 @@ function inputReader(){
                 }
 
                 document.querySelector(".xVal-output").innerHTML = "f("+xVal+") = "+fx
+
                 
-
-
-                var simplifyX = document.querySelector(".simplify-string").value
-               
-
-
-                if(simplifyX != null || simplifyX != ""){
-                    var p2 = document.createElement("p")
-                    p.innerHTML = (math.simplify(simplifyX)).toString()
-                    document.querySelector("simplify-container").append(p)
+                                
+                
+                
+                var simplyText = document.querySelector(".simplify-string").value
+                if (document.querySelector(".simplify-string").value === undefined || simplyText === "" || simplyText === null){
+                    options={
+                        target: '#root',
+                        title: 'Graf',
+                        width: 700,
+                        height: 500,
+                        xAxis: { domain: [-5, 5] },
+                        yAxis: { domain: [-5, 5] },
+                        grid: true,
+                        data: [
+                            {
+                                fn: 'x^3', color: 'blue'
+                            }]
+                    }
                 }
+                console.log(simplyText)
+                var p = document.createElement("p")
+                p.innerHTML = (math.simplify(simplyText)).toString()
+                console.log(p)
+                document.querySelector(".simplify-container").append(p)
+                
 
                 options={
                     target: '#root',
@@ -123,7 +137,9 @@ function inputReader(){
                             fn: y, color: 'blue'
                         }]
                 }
-                
+               
+
+
             }
                    
             else if(mathOption == "integral"){
@@ -564,4 +580,7 @@ else if(tangent == 1){
         }
         tangent++;
 }*/
+
+
+
 
