@@ -71,7 +71,6 @@ function inputReader(){
         }
 
             else if(mathOption == "y"){
-                console.log(mathOption)
                 var y = document.querySelector('#graphFunction').value;
                 var xVal = document.querySelector('.x-value').value;
 
@@ -79,7 +78,7 @@ function inputReader(){
 
 
 
-                console.log(math.simplify(y).evaluate({x:xVal}))
+                //console.log(math.simplify(y).evaluate({x:xVal}))
                 var fx = (math.simplify(y).evaluate({x:xVal})).toString()
 
                 if(xDerValue == null || xDerValue == ""){
@@ -97,32 +96,14 @@ function inputReader(){
 
                 document.querySelector(".xVal-output").innerHTML = "f("+xVal+") = "+fx
 
-                
-                                
-                
-                
-                var simplyText = document.querySelector(".simplify-string").value
-                if (document.querySelector(".simplify-string").value === undefined || simplyText === "" || simplyText === null){
-                    options={
-                        target: '#root',
-                        title: 'Graf',
-                        width: 700,
-                        height: 500,
-                        xAxis: { domain: [-5, 5] },
-                        yAxis: { domain: [-5, 5] },
-                        grid: true,
-                        data: [
-                            {
-                                fn: 'x^3', color: 'blue'
-                            }]
-                    }
+                var simplyText = document.querySelector(".simplify-string")
+
+
+                if(simplyText.value != ""){
+                    var p = document.createElement("p")
+                    p.innerHTML = math.simplify(simplyText.value).toString()
+                    document.querySelector(".simplify-container").append(p)
                 }
-                console.log(simplyText)
-                var p = document.createElement("p")
-                p.innerHTML = (math.simplify(simplyText)).toString()
-                console.log(p)
-                document.querySelector(".simplify-container").append(p)
-                
 
                 options={
                     target: '#root',
@@ -141,38 +122,6 @@ function inputReader(){
 
 
             }
-                   
-            else if(mathOption == "integral"){
-
-                console.log(mathOption)
-        
-
-                var y = document.querySelector('#graphFunction').value;
-
-
-                options={
-                    target: '#root',
-                    title: 'Graf',
-                    width: 700,
-                    height: 500,
-                    xAxis: { domain: [-5, 5] },
-                    yAxis: { domain: [-5, 5] },
-                    grid: true,
-                    data: [
-                        {
-                            fn: y, color: 'blue',
-                            range: [x1, x2],
-                            closed: true
-                        }]
-                }
-                
-            }
-
-
-
-
-
-
 
             else if(mathOption == "integral"){
 
@@ -198,103 +147,10 @@ function inputReader(){
                             }]
                     }
                 }
-                    else if(!x1t == '' || !x2t == ''){
-
-                        /*
-                        x1
-                        x2
-                        */
-
-                       var times = 2;
-                        var diff = x2 - x1
-                        var idiff = 1
-                        var area = 0;
-                        var prevArea = 0;
-                        var difference = 0;
-                        
-                        while(idiff > 0){
-                            
-                            var room = diff/times
-                            for(var i = 0; diff>i; i++){
-                                var mid = room / 2 + x1 + room * i
-                                var height = mid * mid
-                                area = height * room + area
-                                difference = area - prevArea
-                            }
-                            console.log(area)
-                            idiff = Math.abs(area-prevArea)
-                            prevArea = area
-                            area = 0
-                            times++
-                        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    else if(x1t != '' || x2t != ''){
+                        console.log("går in i if sats")
+                        console.log(math.integral('x^2', 'x'));     
+                        console.log(math.integral(y, 'x'));
 
                         options={
                             target: '#root',
@@ -307,7 +163,7 @@ function inputReader(){
                             data: [
                                 {
                                     fn: y, color: 'blue',
-                                    range: [x1, x2],
+                                    range: [x1t, x2t],
                                     closed: true
                                 }]
                         }

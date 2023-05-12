@@ -38,6 +38,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "mathjs": "^11.8.0",
+    "mathjs-simple-integral": "^0.1.1",
     "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "passport": "^0.6.0",
