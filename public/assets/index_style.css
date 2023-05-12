@@ -30,14 +30,14 @@ body {
   flex-direction: column;
 }
 .container .user-coloumn .settings-container {
-  background-color: transparent;
   height: 100%;
   position: absolute;
   display: flex;
-  width: 12%;
+  width: 0%;
   flex-direction: row;
   left: 0;
   border-left: solid white 2px;
+  z-index: 1;
 }
 .container .user-coloumn .settings-container .button {
   margin-left: 0.6rem;
@@ -53,7 +53,7 @@ body {
 .container .user-coloumn .settings-container .settings-block {
   visibility: hidden;
   height: 100%;
-  width: 0%;
+  width: 100%;
   background-color: hsl(0, 0%, 25%);
   border-right: white solid 2px;
   box-shadow: 0 0 10px 2px white;
@@ -61,6 +61,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  z-index: 1;
 }
 .container .user-coloumn .settings-container .settings-block .selection-container {
   display: flex;
@@ -145,24 +146,33 @@ body {
   background-color: blue;
   overflow: auto;
   min-width: 80%;
+  max-width: 80%;
   height: 16rem;
   margin-top: 4%;
   gap: 2rem;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 20%);
+  justify-content: center;
+  grid-template-columns: repeat(4, 18.865%);
 }
 .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc {
   height: 5rem;
-  background-color: red;
+  background-color: hsl(0, 0%, 0%);
+  border-radius: 0.25rem;
+  outline: none;
+  border: solid #2BB2F5;
+  color: white;
 }
 .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc:hover {
   cursor: pointer;
+  background-color: hsl(0, 0%, 20%);
+  transition-duration: 0.2s;
 }
 .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container {
   display: none;
+  position: absolute;
   background-color: red;
-  width: 100%;
+  width: 25%;
   height: -moz-max-content;
   height: max-content;
 }

@@ -9,20 +9,36 @@ function settings(){
 
     if(counter%2 == 0 )
     {
+        document.querySelector(".settings-container").style="width:0%;border-left: solild 2px white;transition-delay: 0.4s;";
         document.querySelector(".settings-block").style="visibility:hidden;transition-duration: 0.4s;width:0%;"
-        document.querySelector(".settings-container").style="border-left: solild 2px white;transition-delay: 0.4s;";
         let elements = document.querySelectorAll('.selection-container');
         for (const element of elements) {
             element.style="margin: 0;";
         }
         iconRemover()
         document.querySelector(".horizontal").style="display: none;"
+
+        document.querySelector("#root").style="filter: none"
+        document.querySelector(".graph-input").style="filter: none"
+        document.querySelector(".category-container").style="filter: none;"
+        document.querySelector(".user-coloumn h1").style="filter: none"
         
     }
     else if(counter%2 == 1)
     {
-        document.querySelector(".settings-block").style="visibility:visible;transition-duration: 0.4s;width:60%;"
-        document.querySelector(".settings-container").style="border:none;"
+        
+        document.querySelector("#root").style="filter: blur(2px)"
+        document.querySelector(".graph-input").style="filter: blur(2px)"
+        document.querySelector(".category-container").style="filter: blur(2px);"
+        document.querySelector(".user-coloumn h1").style="filter: blur(2px)"
+        
+        document.querySelector(".settings-block").style="visibility:visible;transition-duration: 0.4s;width:100%;"
+        document.querySelector(".settings-container").style="width:12%;border:none;"
+
+
+
+
+
         iconShower()
     }
     
@@ -73,7 +89,9 @@ function calcOption(option){
         element.style.display="none"
     }
     document.getElementsByClassName('calculate-selection')[0].dataset.calc = option;
+    
     const chosenCalc = document.querySelector("." + option + "-container").style.display="block"
+    document.querySelector("calculate-selection").style="display:grid;place-items:center;"
 }
 
 

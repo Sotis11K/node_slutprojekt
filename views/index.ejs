@@ -20,7 +20,7 @@
 <body>
     <div class="container">
         <div class="user-coloumn">
-            <div class="settings-container" style="display:none">
+            <div class="settings-container">
                 <div class="settings-block">
                     <div class="selection-container" onclick="searchUsers()">
                         <div class="remove">
@@ -30,18 +30,18 @@
                         <div class="horizontal"></div>
                     </div>
                     <div class="selection-container">
+                        <i class="fa-solid fa-calculator"></i>
+                        <p>Calculate</p>
+                    </div>
+                    <div class="selection-container">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <p>History</p>
+                    </div>
+                    <div class="selection-container">
                         <a href="/settings">
                             <i class="fa-solid fa-gear"></i>
                         </a>
                         <p>Settings</p>
-                    </div>
-                    <div class="selection-container">
-                        <i class="fa-solid fa-chart-pie"></i>
-                        <p>Functions</p>
-                    </div>
-                    <div class="selection-container">
-                        <i class="fa-solid fa-calculator"></i>
-                        <p>Calculate</p>
                     </div>
                     <div class="selection-container">
                         <i class="fa-solid fa-right-from-bracket" onclick="logoutReveal()"></i>
@@ -66,12 +66,12 @@
                         
                         <!-- ## OPTIONS ##  -->
 
-                        <button class="math-calc" onclick="calcOption('y')">X value</button>
-                        <button class="math-calc" onclick="calcOption('integral')">Integral</button>
-                        <button class="math-calc" onclick="calcOption('tangent')">Tangent</button>
-                        <button class="math-calc" onclick="calcOption('secant')">Secant</button>
-                        <button class="math-calc" onclick="calcOption('derivative')">Derivative</button>
-                        <button class="math-calc" onclick="calcOption('vector')">Vector</button>
+                        <button class="math-calc" onclick="calcOption('y')">X values</button>
+                        <button class="math-calc" onclick="calcOption('integral')">Integrals</button>
+                        <button class="math-calc" onclick="calcOption('tangent')">Tangents</button>
+                        <button class="math-calc" onclick="calcOption('secant')">Secants</button>
+                        <button class="math-calc" onclick="calcOption('derivative')">Derivatives</button>
+                        <button class="math-calc" onclick="calcOption('vector')">Vectors</button>
                         <button class="math-calc" onclick="calcOption('annotations')">Annotations</button>
 
                         
@@ -111,12 +111,16 @@
                         </div>
 
                         <div class="vector-container">
-                            x1<input class="x1v" type="number">
-                            y1<input class="y1v" type="number">
+                            <p>x1</p>
+                            <input class="x1v" type="number">
+                            <p>y2</p>
+                            <input class="y1v" type="number">
 
 
-                            x2<input class="x2v" type="number">
-                            y2<input class="y2v" type="number">
+                            <p>x2</p>
+                            <input class="x2v" type="number">
+                            <p>y2</p>
+                            <input class="y2v" type="number">
                             <button id="updateVec">Update</button>
 
                         </div>
