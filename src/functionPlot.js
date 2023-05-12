@@ -1,5 +1,6 @@
 import functionPlot from 'function-plot'
 import { create, all } from 'mathjs'
+import mathjsSimpleIntegral from 'mathjs-simple-integral';
 
 const config = { }
 const math = create(all, config)
@@ -38,7 +39,7 @@ var options={
 };*/
 
 window.onload = (event) => {
-        [document.querySelector(".submit"), document.querySelector("#tangent-activate"), document.querySelector("#updateVec"), document.querySelector(".xVal-update"), document.querySelector(".deriv-update")].forEach(element=>{
+        [document.querySelector(".submit"), document.querySelector("#tangent-activate"), document.querySelector("#updateVec"), document.querySelectorAll(".xVal-update")[0], document.querySelectorAll(".xVal-update")[1], document.querySelector(".deriv-update")].forEach(element=>{
             element.addEventListener("click", inputReader)
         })
         functionPlot(options)
@@ -61,7 +62,7 @@ function inputReader(){
                 width: 700,
                 height: 500,
                 xAxis: { domain: [-5, 5] },
-                yAxis: { domain: [-4, 6] },
+                yAxis: { domain: [-5, 5] },
                 grid: true,
                 data: [
                     {
@@ -74,27 +75,24 @@ function inputReader(){
                 var y = document.querySelector('#graphFunction').value;
                 var xVal = document.querySelector('.x-value').value;
 
-                
 
-
-
-                //console.log(math.simplify(y).evaluate({x:xVal}))
                 var fx = (math.simplify(y).evaluate({x:xVal})).toString()
 
-                if(xDerValue == null || xDerValue == ""){
+                if(document.querySelector('.x-value').value === ''){
+                    console.log("har inte sträng")
                     var p = document.createElement("p")
                     p.innerHTML = "f(x) = "+y
-                    document.querySelector(".deriv-output").append(p)
+                    document.querySelector(".xVal-output").append(p)
                 }
 
 
-                else if(xVal != null || xVal != ""){
+                else if(document.querySelector('.x-value').value != ''){
+                    console.log("har sträng")
                     var p = document.createElement('p')
                     p.innerHTML = "f("+xVal+") = "+fx
                     document.querySelector(".xVal-output").append(p)
                 }
 
-                document.querySelector(".xVal-output").innerHTML = "f("+xVal+") = "+fx
 
                 var simplyText = document.querySelector(".simplify-string")
 
@@ -148,10 +146,51 @@ function inputReader(){
                     }
                 }
                     else if(x1t != '' || x2t != ''){
-                        console.log("går in i if sats")
-                        console.log(math.integral('x^2', 'x'));     
-                        console.log(math.integral(y, 'x'));
+                       
+                        console.log("Hej")
+                        console.log(math.integral('x^2', 'x')); // 'x ^ 3 / 3'
+                        console.log(math.integral('x^2', 'x').toString()); // 'x ^ 3 / 3'
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
                         options={
                             target: '#root',
                             title: 'Graf',
@@ -166,8 +205,9 @@ function inputReader(){
                                     range: [x1t, x2t],
                                     closed: true
                                 }]
+                            }
                         }
-                    }
+                    
             }
       
     
@@ -344,6 +384,8 @@ function inputReader(){
             else if(mathOption == "annotations"){
                 console.log(mathOption)
                 var y = document.querySelector('#graphFunction').value;
+                var xa = document.querySelector('.xa').value;
+                var ya = document.querySelector('.ya').value;
                 
                     options={
                         target: '#root',
@@ -354,20 +396,21 @@ function inputReader(){
                         yAxis: { domain: [-5, 5] },
                         grid: true,
                         data: [{
-                            fn: 'x^2', color: 'blue'
+                            fn: y, color:'blue'
                           }],
                           annotations: [{
-                            x: -1, color: 'red',
+                            x: xa
                           }, {
-                            x: 1, color: 'green',
-                            text: 'x = 1'
-                          }, {
-                            y: 2, color: 'blue',
-                            text: 'y = 2'
+                            y: ya
                           }]
-                    }
-
             }
+        
+
+
+
+
+
+    }
                 
         functionPlot(options);
     }
@@ -436,7 +479,6 @@ else if(tangent == 1){
         }
         tangent++;
 }*/
-
 
 
 
