@@ -14,6 +14,7 @@
     <script type="module" src="/src/math.js" defer></script>
     <script type="module" src="/src/functionPlot.js" defer></script>
     <script src="https://kit.fontawesome.com/edc27adb51.js" crossorigin="anonymous"></script>
+    
 
     <title>Graph</title>
 </head>
@@ -22,12 +23,14 @@
         <div class="user-coloumn">
             <div class="settings-container">
                 <div class="settings-block">
-                    <div class="selection-container" onclick="searchUsers()">
-                        <div class="remove">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <p>Search</p>   
+                    <div class="selection-container">
+                        <div class="search-container">
+                            <p>Search usernames</p>   
+                            <div class="user-submit">
+                                <input type="text" id="autocomplete_search" placeholder="Type username here" />
+                                <span id="search_result"></span>
+                            </div>
                         </div>
-                        <div class="horizontal"></div>
                     </div>
                     <div class="selection-container">
                         <i class="fa-solid fa-calculator"></i>
@@ -57,6 +60,8 @@
                 <input id="graphFunction" type="text" placeholder="Example: x^2...">
                 <button class="submit">Submit</button>
             </div>
+
+            
 
             <div class="category-container">
                 <div class="calculate-container">
@@ -154,5 +159,26 @@
         </div>
         <div id="root"></div>
     </div>
+
+
+
+<div class="profile-card">
+    <a href="/" id="profile-card-back">Back</a>
+    <img id="profile-card-image" src="/assets/Images/defaltPFP.png" alt="Profile picture">
+      <div class="information-container">
+        <p id="usernameDisplay"></p>
+        <p id="countryDisplay">Country: None selected</p>
+        <p id="membersinceDisplay"></p>
+    </div>   
+
+     <!-- <div class="information-container">
+        <p id="usernameDisplay">Username: ella</p>
+        <p id="countryDisplay">Country: Sweden</p>
+        <p id="membersinceDisplay">Member since: 9/11</p>
+    </div>    -->
+
+</div>
+
 </body>
 </html>
+

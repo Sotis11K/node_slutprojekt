@@ -49,6 +49,37 @@ app.post('/login', async function(req, res) {
     });
 });
 
+
+app.get('/get_data', function(request, response, next){
+
+    var search_query = request.query.search_query;
+    var query = `
+    SELECT username FROM users
+    WHERE username LIKE '%${search_query}%' 
+    LIMIT 10
+    `;
+    db.query(query, function(error, data){
+        response.json(data);
+    });
+
+});
+
+
+app.get('/data', (req, res) => {
+    db.query('SELECT * FROM users', (error, results, field) =>{
+        if(error){
+            console.error(error)
+        }else{
+            res.json(results)
+        }
+    })
+  });
+  
+
+
+
+
+
 app.get('/login', function(req, res) {
     res.render('login');
 });

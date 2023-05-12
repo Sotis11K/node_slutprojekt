@@ -69,8 +69,57 @@ body{
                     color: white;
                     gap: 5px;
                     width: max-content;
-                    .horizontal{
+                    .search-container{
                         display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: white;
+                        gap: 5px;
+                        width: max-content;
+                        .user-submit{
+                            width: 60%;
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.25rem;
+                            #autocomplete_search{
+                                position: relative;
+                                width: 100%;
+                                height: 2rem;
+                                padding: 0.25rem 0.5rem;
+                                background-color: black;
+                                box-shadow: 0 0 3px 2px #2BB2F5;
+                                color: white;
+                                border-radius: 0.25rem;
+                                outline: none;
+                                border: none;
+                                display: flex;
+                                flex-direction: column;
+                            }
+                            .list-group{
+                                display: flex;
+                                flex-direction: column;
+                                padding-left: 0;
+                                margin-bottom: 0;
+                                border-radius: 0.25rem;
+                                gap: 0.25rem;
+                                margin: 0.25rem 0 0 0;
+                                
+                                .list-group-item{
+                                    position: relative;
+                                    display: block;
+                                    padding: 0.5rem 1rem;
+                                    color: white;
+                                    text-decoration: none;
+                                    background-color: black;
+                                    width: 100%;
+                                    &:hover{
+                                        cursor: pointer;
+                                        background-color: red;
+                                    }
+                                }
+                            }
+                        }
                     }
                     i{
                         color: white;
@@ -203,6 +252,66 @@ body{
         margin-right: 1rem;
     }
 }
+
+
+.profile-card{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    height: 80%;
+    width: 80%;
+    display: none;
+    img{
+        width: 70%;
+        height: 70%;
+        transform: translate(-50%);
+        left: 50%;
+        position: absolute;
+        border-radius: 50%;
+    }
+    .information-container{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        border: solid red 1px;
+        height: 30%;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+        p{
+            color: white;
+            font-size: 2rem;
+            border: solid red 1px;
+            width: max-content
+        }
+    }
+    #profile-card-back{
+        width: max-content;
+        top: 3%;
+        left: 3%;
+        border: solid #2BB2F5;
+        border-radius: 0.25rem;
+        position: absolute;
+        font-size: 1.2rem;
+        padding: 0.25rem 0.5rem;
+        text-decoration: none;
+        color: white;
+        &:hover{
+            cursor: pointer;
+            background-color: hsl(0, 0%, 20%);
+        }
+    }
+}
+
+
+
+
+
+
+
 
 
    

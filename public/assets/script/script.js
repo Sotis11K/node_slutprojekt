@@ -16,7 +16,6 @@ function settings(){
             element.style="margin: 0;";
         }
         iconRemover()
-        document.querySelector(".horizontal").style="display: none;"
 
         document.querySelector("#root").style="filter: none"
         document.querySelector(".graph-input").style="filter: none"
@@ -48,39 +47,6 @@ function settings(){
 
 
 
-counter = 0;
-function searchUsers(){
-    document.querySelector(".settings-container").style="width:30%;transition-duration:0.6s"
-    document.querySelector(".settings-block").style="visibility:visible;transition-duration: 0.4s;width:60%;align-items:normal;"
-    let elements = document.querySelectorAll('.selection-container');
-    for (const element of elements) {
-        element.style="margin-left: 2rem";
-    }
-    
-    if(counter < 2){
-        
-        
-        var input = document.createElement("input")
-        document.querySelector(".horizontal").append(input);
-        document.querySelector(".remove").style="visibility:hidden;";
-        input.style="transition-duration:0.6s;display:block;border:none;outline:none;height:2.5rem;border-radius:0.25rem;box-shadow: 0 0 3px 2px #2BB2F5;text-indent:10px;background-color:black;color:white;"
-        
-        var button = document.createElement("button")
-        button.innerText = "Search"
-        document.querySelector(".horizontal").append(button)
-        input.addEventListener("focus", function(){
-            input.style="border:none;outline:none;height:2.5rem;border-radius:0.25rem;text-indent:10px;background-color:black;color:white;box-shadow: 0 0 6px 4px #2BB2F5"
-        });
-        
-        
-        
-    }
-    counter++;
-    console.log(counter)
-
-
-    
-}
 
 
 function calcOption(option){
@@ -138,3 +104,180 @@ function iconShower(){
 
 
         
+
+
+
+
+
+
+
+
+
+
+
+function load_data(query = '')
+{
+    fetch('/get_data?search_query='+query+'').then(function(response){
+
+        return response.json();
+
+    }).then(function(responseData){
+
+        var html = '<ul class="list-group">';
+
+        if(responseData.length > 0)
+        {
+            for(var count = 0; count < responseData.length; count++)
+            {
+                var regular_expression = new RegExp('('+query+')', 'gi');
+
+                html += '<a href="#'+responseData[count].username+'" class="list-group-item" onclick="get_text(this)">'+responseData[count].username.replace(regular_expression, '<span style="700;color:#2BB2F5;">$1</span>')+'</a>';
+            }
+        }
+        else
+        {
+            html += '<a href="#" class="list-group-item list-group-item-action disabled">No Data Found</a>';
+        }
+
+        html += '</ul>';
+
+        document.getElementById('search_result').innerHTML = html;
+
+    });
+}
+
+var search_element = document.getElementById("autocomplete_search");
+
+search_element.onkeyup = function(){
+
+    var query = search_element.value;
+
+    load_data(query);
+
+};
+
+search_element.onfocus = function(){
+
+    var query = search_element.value;
+
+    load_data(query);
+
+};
+
+
+
+function get_text(event)
+{
+    var username = event.textContent;
+    document.getElementById('autocomplete_search').value = username;
+    document.getElementById('search_result').innerHTML = '';
+    document.querySelector('.profile-card').style="display:block"
+    document.querySelector('.container').style="filter: blur(2px);"
+
+    fetch('/data')
+    .then(response => response.json())
+    .then(data => {
+
+
+        var searchField = "username";
+        var searchVal = username;
+        
+        console.log(username)
+        var x = false
+        var i = 0;
+
+        while(!x){
+            console.log((data[i]));
+            if (data[i][searchField] == searchVal) {
+                console.log((data[i]));
+                var x = true
+            }
+            i++;
+        }
+        i--;
+
+
+
+        if(data[i].username != ""){
+            document.getElementById("usernameDisplay").innerHTML = "Username: " + data[i].username
+        }
+
+        if(data[i].country != ""){
+            document.getElementById("countryDisplay").innerHTML = "Country: " + data[i].country
+        }
+
+        if(data[i].image != ""){
+            document.getElementById("profile-card-image").src = data[i].image
+        }
+
+        if(data[i].date_added != ""){
+            const isoDateString = data[i].date_added;
+            const date = new Date(isoDateString);
+            const formattedDate = date.toLocaleString(); 
+            document.getElementById("membersinceDisplay").innerHTML = "Member since: " + formattedDate
+        }
+
+
+
+
+
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
+    
+    
+        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
