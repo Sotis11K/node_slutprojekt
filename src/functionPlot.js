@@ -410,8 +410,11 @@ function inputReader(){
 
 
 
-    }
-                
+        }
+        
+        var p = document.createElement("p")
+        p.innerHTML = "f(x) = " + y
+        document.querySelector(".history").append(p)
         functionPlot(options);
     }
 

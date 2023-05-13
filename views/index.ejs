@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
 	<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
 	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/assets/index_style.css">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="/app.js" defer></script>
     <script src="/assets/script/script.js" defer></script>
     <script type="module" src="/src/math.js" defer></script>
@@ -32,11 +30,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="selection-container">
+                    <div class="selection-container" onclick="calculateReveal()">
                         <i class="fa-solid fa-calculator"></i>
                         <p>Calculate</p>
                     </div>
-                    <div class="selection-container">
+                    <div class="selection-container" onclick="historyReveal()">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <p>History</p>
                     </div>
@@ -67,8 +65,6 @@
                 <div class="calculate-container">
                     <h2>Calculate</h2>
                     <div class="calculate-selection">
-                        
-                        
                         <!-- ## OPTIONS ##  -->
 
                         <button class="math-calc" onclick="calcOption('y')">X values</button>
@@ -78,8 +74,6 @@
                         <button class="math-calc" onclick="calcOption('derivative')">Derivatives</button>
                         <button class="math-calc" onclick="calcOption('vector')">Vectors</button>
                         <button class="math-calc" onclick="calcOption('annotations')">Annotations</button>
-
-                        
 
                         <!-- ## DISPLAYS ##  -->
 
@@ -134,28 +128,15 @@
                             x<input class="xa" type="number">
                             y<input class="ya" type="number">
                         </div>
-
-
-
-
-
-
-
-
                     </div>
-                    
                 </div>
-                <!-- <div class="history">
+
+
+                <div class="history-container">
                     <h2>History</h2>
-                    <div class="history-container">
-                        <p></p>
-                    </div>
-                </div> -->
-
+                    <div class="history"></div> 
+                </div>
             </div>
-
-            
-
         </div>
         <div id="root"></div>
     </div>
@@ -164,18 +145,18 @@
 
 <div class="profile-card">
     <a href="/" id="profile-card-back">Back</a>
-    <img id="profile-card-image" src="/assets/Images/defaltPFP.png" alt="Profile picture">
+    <img id="profile-card-img" src="/assets/Images/defaltPFP.png" alt="Profile picture">
       <div class="information-container">
         <p id="usernameDisplay"></p>
         <p id="countryDisplay">Country: None selected</p>
         <p id="membersinceDisplay"></p>
-    </div>   
+    </div> 
 
-     <!-- <div class="information-container">
+      <!-- <div class="information-container">
         <p id="usernameDisplay">Username: ella</p>
         <p id="countryDisplay">Country: Sweden</p>
         <p id="membersinceDisplay">Member since: 9/11</p>
-    </div>    -->
+    </div>     -->
 
 </div>
 

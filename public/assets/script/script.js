@@ -72,14 +72,20 @@ function calcOption(option){
 
 
 
+function calculateReveal(){
+    document.querySelector(".history-container").style="display: none;"
+    document.querySelector(".calculate-container").style="display: flex;"
+}
+
+
+function historyReveal(){
+    document.querySelector(".history-container").style="display: flex;"
+    document.querySelector(".calculate-container").style="display: none;"
+}
 
 
 
 
-
-function settingsReveal(){}
-function functionsReveal(){}
-function calculateReveal(){}
 function logoutReveal(){
     window.location.replace("/login")
 }
@@ -206,8 +212,9 @@ function get_text(event)
             document.getElementById("countryDisplay").innerHTML = "Country: " + data[i].country
         }
 
-        if(data[i].image != ""){
-            document.getElementById("profile-card-image").src = data[i].image
+        if(data[i].img != ""){
+            console.log(data[i].img)
+            document.getElementById("profile-card-img").src = data[i].img
         }
 
         if(data[i].date_added != ""){
@@ -230,26 +237,6 @@ function get_text(event)
     
         
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

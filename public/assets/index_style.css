@@ -190,6 +190,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  display: flex;
 }
 .container .user-coloumn .category-container .calculate-container .calculate-selection {
   background-color: blue;
@@ -241,6 +242,37 @@ body {
   width: 80%;
   border-bottom: solid 0.15rem;
 }
+.container .user-coloumn .category-container .history-container {
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+}
+.container .user-coloumn .category-container .history-container .history {
+  display: block;
+  overflow: auto;
+  min-width: 80%;
+  max-width: 80%;
+  height: 16rem;
+  margin-top: 4%;
+  gap: 2rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .user-coloumn .category-container .history-container .history p {
+  background-color: black;
+  box-shadow: 0 0 2px 2px #2BB2F5;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
 .container #root {
   display: grid;
   place-items: center;
@@ -255,6 +287,8 @@ body {
   left: 50%;
   top: 50%;
   background-color: black;
+  box-shadow: 0 0 5px 2px #2BB2F5;
+  border-radius: 0.25rem;
   height: 80%;
   width: 80%;
   display: none;
@@ -271,7 +305,7 @@ body {
   display: flex;
   position: absolute;
   bottom: 0;
-  border: solid red 1px;
+  background-color: hsl(0, 0%, 14%);
   height: 30%;
   width: 100%;
   justify-content: space-evenly;
@@ -281,7 +315,10 @@ body {
 .profile-card .information-container p {
   color: white;
   font-size: 2rem;
-  border: solid red 1px;
+  border: solid #2BB2F5 1px;
+  background-color: black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
   width: -moz-max-content;
   width: max-content;
 }

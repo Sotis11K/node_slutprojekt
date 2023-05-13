@@ -187,6 +187,7 @@ body{
                 display: flex;
                 align-items: center;
                 flex-direction: column;
+                display: flex;
                 .calculate-selection{
                     background-color: blue;
                     overflow: auto;
@@ -199,7 +200,6 @@ body{
                     display: grid;
                     justify-content: center;
                     grid-template-columns: repeat(4, 18.865%);
-                    
                     .math-calc{
                         height: 5rem;
                         background-color: hsl(0, 0%, 0%);
@@ -207,14 +207,11 @@ body{
                         outline: none;
                         border: solid #2BB2F5;
                         color: white;
-                        
                         &:hover{
                             cursor: pointer;
                             background-color: hsl(0, 0%, 20%);
                             transition-duration: 0.2s;
                         }
-                        
-                       
                     }
                     .y-container, .integral-container, .tangent-container, .secant-container, .derivative-container, .vector-container, .annotations-container{
                         display: none; 
@@ -241,9 +238,38 @@ body{
                 width: 80%;
                 border-bottom: solid 0.15rem;
             }
-        }
+            .history-container{
+                width: 100%;
+                height: max-content;
+                display: none;
+                align-items: center;
+                flex-direction: column;
+                .history{
+                    display: block;
+                    overflow: auto;
+                    min-width: 80%;
+                    max-width: 80%;
+                    height: 16rem;
+                    margin-top: 4%;
+                    gap: 2rem;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    p{
+                        background-color: black;
+                        box-shadow: 0 0 2px 2px #2BB2F5;
+                        border-radius: 0.25rem;
+                        padding: 0.25rem 0.5rem;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 1.5rem;
+                        color: white;
+                    }
+                }
+            }
+        }   
     }
-
     
     #root{
         display: grid;
@@ -260,6 +286,8 @@ body{
     left: 50%;
     top: 50%;
     background-color: black;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    border-radius: 0.25rem;
     height: 80%;
     width: 80%;
     display: none;
@@ -275,7 +303,7 @@ body{
         display: flex;
         position: absolute;
         bottom: 0;
-        border: solid red 1px;
+        background-color: hsl(0, 0%, 14%);
         height: 30%;
         width: 100%;
         justify-content: space-evenly;
@@ -284,7 +312,10 @@ body{
         p{
             color: white;
             font-size: 2rem;
-            border: solid red 1px;
+            border: solid #2BB2F5 1px;
+            background-color: black;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
             width: max-content
         }
     }

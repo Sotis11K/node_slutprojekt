@@ -1,30 +1,93 @@
-const express = require('express');
+/*const express = require('express');
 const app = express();
 const db = require('./connection');
 const bcrypt = require('bcrypt')
-//const passport = require('passport')
-//const initializedPassport = require('./passport') 
-const flash = require('express-flash')
-const session = require('express-session')
+const multer = require('multer');
+const storage = multer.memoryStorage();
+const upload = multer({storage: storage})
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
-
-
-// initializedPassport(passport, email => {
-//     passport,
-//     email => users.find(user => user.email === email),
-//     id => user.find(user => user.id === id)
-// })
 const path = require('path');
-const upload = require('./uploads');
-// const { Passport } = require('passport');
- app.use(express.static(path.resolve('./public')));
 
- 
 
+
+app.use(express.static(path.resolve('./public')));
 
 app.set('view engine', 'ejs');
+
+
+app.get('/', function(req, res) {
+    const img = req.file ? req.file.buffer.toString('base64') : null;
+    res.render('index', { img: img });
+  });
+
+app.post('/register', upload.single('img'), async (req,res) => {
+
+    try {
+      const img = req.file.buffer.toString('base64');
+      const hashedPassword = await bcrypt.hash(req.body.password, 11);
+      const password = req.body.password;
+      const country = req.body.country;
+      const username = req.body.username;
+      const email = req.body.email;
+      const sqlInsert = "INSERT INTO users (username, email, country, password, img) VALUES (?, ?, ?, ?, ?)";
+      db.query(sqlInsert, [username, email, country, hashedPassword, img]);
+      console.log(img);
+      //res.redirect('/login');
+    } catch(error) {
+      console.log(error);
+      //res.redirect('/register');
+    }
+  });*/
+
+  
+  
+  const express = require('express');
+  const app = express();
+  const path = require('path');
+  const db = require('./connection');
+  const bcrypt = require('bcrypt')
+  const multer = require('multer');
+
+
+  var randomNumber = Math.floor(Math.random() * 1000000);
+   const storage = multer.diskStorage({
+    destination: (req, file, cb) =>{
+        cb(null, 'public/assets/Images')
+    },
+    filename: (req, file, cb) =>{
+        console.log(file)
+        cb(null, randomNumber + path.extname(file.originalname))
+    }
+})
+
+   const upload = multer({storage: storage})
+  
+  const bodyParser = require('body-parser')
+  app.use(bodyParser.urlencoded({ extended: false }))
+  
+  app.use(express.static(path.resolve('./public')));
+  
+  app.set('view engine', 'ejs');
+  
+  
+
+  app.get('/', function(req, res) {
+      res.render('index');
+  });
+  
+ 
+//   app.post('/upload', upload.single('file'), function(req, res) {
+//     res.send('File uploaded successfully.');
+//     console.log('File uploaded successfully.');
+//   });
+  
+
+
+
+
+
 
 app.post('/login', async function(req, res) {
     const email = req.body.email;
@@ -97,16 +160,15 @@ app.get('/logout', (req, res) =>{
     res.render('register')
  });
 
- app.get('/', function(req,res){
-    res.render('index')
- });
+ 
+  
 
 app.post('/settings', (req, res) =>{
     try{
 
         const color = req.body.color
-        const sqlInstert = "INSERT INTO user_settings (themeColor) VALUES (?);"
-        db.query(sqlInstert, [color])
+        const sqlInsert = "INSERT INTO user_settings (themeColor) VALUES (?);"
+        db.query(sqlInsert, [color])
         res.redirect("/settings")
     }
     catch{
@@ -117,24 +179,52 @@ app.post('/settings', (req, res) =>{
 
 
 
- app.post('/register', async (req,res) =>{
+ /*app.post('/register', upload.single('img'), async (req,res) =>{
      try{
+        const img = req.file.buffer.toString('base64');
          const hashedPassword = await bcrypt.hash(req.body.password, 11)
          const password = req.body.password
+         //const img = req.file.filename;
+         const country = req.body.country
          const username = req.body.username;
          const email = req.body.email;
-         const sqlInstert = "INSERT INTO users (username, email, password) VALUES (?, ?, ?);"
-         db.query(sqlInstert, [username, email, hashedPassword])
-         res.redirect('/login')
+         const sqlInsert = "INSERT INTO users (username, email, country, password, img) VALUES (?, ?, ?, ?, ?)";
+         db.query(sqlInsert, [username, email, country, hashedPassword, img])
+        console.log(img)
+         //res.redirect('/login')
      }
      catch{
          res.redirect('/register')
      }
+ });*/
 
- });
+ 
+  
+  
+ app.post('/register', upload.single('img'), async (req,res) => {
+    try {
+      const hashedPassword = await bcrypt.hash(req.body.password, 11);
+      const password = req.body.password;
+      const country = req.body.country;
+      const username = req.body.username;
+      const email = req.body.email;
+    const img = "/assets/Images/" + (randomNumber + path.extname(req.file.originalname))
+      const sqlInsert = "INSERT INTO users (username, email, country, password, img) VALUES (?, ?, ?, ?, ?)";
+      db.query(sqlInsert, [username, email, country, hashedPassword, img]);
+      res.redirect('/login');
+    } catch(error) {
+      console.log(error);
+      res.redirect('/register');
+    }
+});
+
+
+
  
 
 
 app.listen(process.env.PORT || 3000, function(){
    console.log('server, port 3000');
 });
+
+
