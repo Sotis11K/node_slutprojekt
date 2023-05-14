@@ -193,7 +193,6 @@ body {
   display: flex;
 }
 .container .user-coloumn .category-container .calculate-container .calculate-selection {
-  background-color: blue;
   overflow: auto;
   min-width: 80%;
   max-width: 80%;
@@ -281,7 +280,21 @@ body {
   margin-right: 1rem;
 }
 
-.profile-card {
+/*
+
+estonia
+finland
+australia
+moldova
+tyskland
+
+isreal
+
+
+
+
+*/
+.profile-card, .settings-card {
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
@@ -293,7 +306,7 @@ body {
   width: 80%;
   display: none;
 }
-.profile-card img {
+.profile-card img, .settings-card img {
   width: 70%;
   height: 70%;
   transform: translate(-50%);
@@ -301,7 +314,7 @@ body {
   position: absolute;
   border-radius: 50%;
 }
-.profile-card .information-container {
+.profile-card .information-container, .settings-card .information-container {
   display: flex;
   position: absolute;
   bottom: 0;
@@ -312,7 +325,7 @@ body {
   align-items: center;
   gap: 1rem;
 }
-.profile-card .information-container p {
+.profile-card .information-container p, .settings-card .information-container p {
   color: white;
   font-size: 2rem;
   border: solid #2BB2F5 1px;
@@ -322,7 +335,18 @@ body {
   width: -moz-max-content;
   width: max-content;
 }
-.profile-card #profile-card-back {
+.profile-card .settings-container, .settings-card .settings-container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(0, 0%, 14%);
+  height: 30%;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+.profile-card #profile-card-back, .profile-card .settings-card-back, .settings-card #profile-card-back, .settings-card .settings-card-back {
   width: -moz-max-content;
   width: max-content;
   top: 3%;
@@ -335,9 +359,13 @@ body {
   text-decoration: none;
   color: white;
 }
-.profile-card #profile-card-back:hover {
+.profile-card #profile-card-back:hover, .profile-card .settings-card-back:hover, .settings-card #profile-card-back:hover, .settings-card .settings-card-back:hover {
   cursor: pointer;
   background-color: hsl(0, 0%, 20%);
+}
+
+.settings-card {
+  display: block;
 }
 
 text.title {

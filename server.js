@@ -137,6 +137,16 @@ app.get('/data', (req, res) => {
         }
     })
   });
+
+  app.get('/colors', (req, res) => {
+    db.query('SELECT * FROM user_settings', (error, results, field) =>{
+        if(error){
+            console.error(error)
+        }else{
+            res.json(results)
+        }
+    })
+  });
   
 
 

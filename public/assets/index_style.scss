@@ -189,7 +189,6 @@ body{
                 flex-direction: column;
                 display: flex;
                 .calculate-selection{
-                    background-color: blue;
                     overflow: auto;
                     min-width: 80%;
                     max-width: 80%;
@@ -279,8 +278,23 @@ body{
     }
 }
 
+/*
 
-.profile-card{
+estonia
+finland
+australia
+moldova
+tyskland
+
+isreal
+
+
+
+
+*/
+
+
+.profile-card, .settings-card{
     position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
@@ -319,7 +333,18 @@ body{
             width: max-content
         }
     }
-    #profile-card-back{
+    .settings-container{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        background-color: hsl(0, 0%, 14%);
+        height: 30%;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+    }
+    #profile-card-back, .settings-card-back{
         width: max-content;
         top: 3%;
         left: 3%;
@@ -337,6 +362,11 @@ body{
     }
 }
 
+
+
+.settings-card{
+    display: block;
+}
 
 
 

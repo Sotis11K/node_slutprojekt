@@ -9,7 +9,7 @@ html, body {
   width: 100%;
 }
 
-.container {
+.containerSettings {
   background-color: hsl(0, 0%, 25%);
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@ html, body {
   height: 100%;
   width: 100%;
 }
-.container .back {
+.containerSettings .back {
   position: absolute;
   margin: 2rem;
   top: 0;
@@ -31,24 +31,24 @@ html, body {
   color: white;
   box-shadow: 0 0 3px 1px #2BB2F5;
 }
-.container .back:hover {
+.containerSettings .back:hover {
   box-shadow: 0 0 5px 3px #2BB2F5;
 }
-.container h1 {
+.containerSettings h1 {
   color: white;
 }
-.container .settings-container {
+.containerSettings .settings-container {
   background-color: hsl(0, 0%, 14%);
   height: 80%;
   width: 80%;
   box-shadow: 0px 0px 30px 5px black;
   border-radius: 0.25rem;
 }
-.container .settings-container .settings {
+.containerSettings .settings-container .settings {
   margin: 2rem;
   background-color: hsl(0, 0%, 35%);
 }
-.container .settings-container .logout {
+.containerSettings .settings-container .logout {
   color: white;
   background-color: red;
   margin-inline: auto;
@@ -59,22 +59,22 @@ html, body {
   padding: 6px 10px;
   box-shadow: 0 0 3px 1px white;
 }
-.container .settings-container .logout:hover {
+.containerSettings .settings-container .logout:hover {
   box-shadow: 0 0 5px 3px white;
   cursor: pointer;
 }
-.container .settings-container h2 {
+.containerSettings .settings-container h2 {
   color: white;
 }
-.container .settings-container .colors {
+.containerSettings .settings-container .colors {
   display: flex;
   gap: 1rem;
   background-color: #0000ff;
 }
-.container .settings-container .colors label {
+.containerSettings .settings-container .colors label {
   outline: none;
   border: none;
 }
-.container .settings-container .colors label:hover {
+.containerSettings .settings-container .colors label:hover {
   cursor: pointer;
 }/*# sourceMappingURL=settings_style.css.map */

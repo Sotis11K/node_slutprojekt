@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/assets/settings_style.css">
     <script src="/assets/script/settings.js" defer></script>
+    <script src="/assets/script/script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="containerSettings">
         <a class="back" href="/">Back</a> 
         <h1>Settings</h1>
         <div class="settings-container">
@@ -18,7 +19,7 @@
                 <form action="/settings" method="POST" class="colors">
                     <label for="color">Select your desired theme</label>
                     <input type="color" value="#0000FF" name="color" id="pageColor">
-                    <button type="submit">Submit</button>
+                    <button type="submit" onclick="getColor()">Submit</button>
                 </form>
                 <button onclick="test()">test</button>
             </div>
