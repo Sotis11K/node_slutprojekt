@@ -1,5 +1,6 @@
 
 
+
 var counter = 0;
 
 function settings(){
@@ -61,16 +62,27 @@ function calcOption(option){
 }
 
 
+function profileUnreveal(){
+    document.querySelector(".profile-card").style="display:none;"
+    document.querySelector(".container").style="filter:blur(0px);"
+    settings()
+}
 
+function settingsUnreveal(){
+    document.querySelector(".settings-card").style="display:none;"
+    document.querySelector(".container").style="filter:blur(0px);"
+    settings()
+}
 
+function settingsReveal(){
+    document.querySelector(".settings-card").style="display:block;"
+    document.querySelector(".container").style="filter:blur(2px);"
+}
 
-
-
-
-
-
-
-
+function pageTheme(){
+    var colorTheme = document.getElementById("page-color").value
+    document.querySelector("body").style.backgroundColor = colorTheme
+}
 
 function calculateReveal(){
     document.querySelector(".history-container").style="display: none;"
@@ -87,8 +99,15 @@ function historyReveal(){
 
 
 function logoutReveal(){
-    window.location.replace("/login")
+    fetch('/logout')
+    .then(() => {
+        window.location.replace("/login")
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }
+
 
 
 function iconRemover(){
@@ -105,7 +124,16 @@ function iconShower(){
     }
 }
 
-
+function logout(req, res) {
+    req.session.destroy(function(err) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect('/');
+      }
+    });
+  }
+  
 
 
 

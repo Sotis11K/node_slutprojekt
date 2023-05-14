@@ -8,6 +8,7 @@ const math = create(all, config)
 
 
 var y = 'x^2'
+var graphColor = "#0000ff"
 
 var x1i = ''
 var x1s = ''
@@ -26,7 +27,7 @@ var options={
     grid: true,
     data: [
         {
-        fn: y, color: 'blue'
+        fn: y, color: graphColor
     }]
 }
 
@@ -39,7 +40,7 @@ var options={
 };*/
 
 window.onload = (event) => {
-        [document.querySelector(".submit"), document.querySelector("#tangent-activate"), document.querySelector("#updateVec"), document.querySelectorAll(".xVal-update")[0], document.querySelectorAll(".xVal-update")[1], document.querySelector(".deriv-update")].forEach(element=>{
+        [document.querySelector(".submit"), document.querySelector("#tangent-activate"), document.querySelector("#updateVec"), document.querySelectorAll(".xVal-update")[0], document.querySelectorAll(".xVal-update")[1], document.querySelector(".deriv-update"), document.getElementById("graph-color-button")].forEach(element=>{
             element.addEventListener("click", inputReader)
         })
         functionPlot(options)
@@ -49,13 +50,27 @@ window.onload = (event) => {
 
 function inputReader(){
     if(document.querySelector('#graphFunction').value == ""){
+        var graphColor = document.getElementById("graph-color").value
         console.log("ingen sträng")
-        return
+        options={
+            target: '#root',
+            title: 'Graf',
+            width: 700,
+            height: 500,
+            xAxis: { domain: [-5, 5] },
+            yAxis: { domain: [-5, 5] },
+            grid: true,
+            data: [
+                {
+                    fn: 'x^3', color: graphColor
+                }]
+        }
     }
     else{
         var mathOption = document.querySelector('.calculate-selection').dataset.calc;
         if(mathOption == undefined || mathOption == null || mathOption == ""){
             var y = document.querySelector('#graphFunction').value;
+            var graphColor = document.getElementById("graph-color").value
             options={
                 target: '#root',
                 title: 'Graf',
@@ -66,13 +81,14 @@ function inputReader(){
                 grid: true,
                 data: [
                     {
-                        fn: y, color: 'blue'
+                        fn: y, color: graphColor
                     }]
             }
         }
 
             else if(mathOption == "y"){
                 var y = document.querySelector('#graphFunction').value;
+                var graphColor = document.getElementById("graph-color").value
                 var xVal = document.querySelector('.x-value').value;
 
 
@@ -113,7 +129,7 @@ function inputReader(){
                     grid: true,
                     data: [
                         {
-                            fn: y, color: 'blue'
+                            fn: y, color: graphColor
                         }]
                 }
                
@@ -127,6 +143,7 @@ function inputReader(){
         
 
                 var y = document.querySelector('#graphFunction').value;
+                var graphColor = document.getElementById("graph-color").value
                 var x1t = document.querySelector('.x1t').value;
                 var x2t = document.querySelector('.x2t').value;
 
@@ -141,7 +158,7 @@ function inputReader(){
                         grid: true,
                         data: [
                             {
-                                fn: y, color: 'blue'
+                                fn: y, color: graphColor
                             }]
                     }
                 }
@@ -150,8 +167,6 @@ function inputReader(){
                         console.log("Hej")
                         console.log(math.integral('x^2', 'x')); // 'x ^ 3 / 3'
                         console.log(math.integral('x^2', 'x').toString()); // 'x ^ 3 / 3'
-
-
 
 
 
@@ -201,7 +216,7 @@ function inputReader(){
                             grid: true,
                             data: [
                                 {
-                                    fn: y, color: 'blue',
+                                    fn: y, color: graphColor,
                                     range: [x1t, x2t],
                                     closed: true
                                 }]
@@ -216,6 +231,7 @@ function inputReader(){
         else if(mathOption == "tangent"){
             console.log(mathOption)
                 var y = document.querySelector('#graphFunction').value;
+                var graphColor = document.getElementById("graph-color").value
                 var deriv = math.derivative(y, 'x').toString()
 
                 options={
@@ -231,7 +247,7 @@ function inputReader(){
                             fn: y, color: 'blue',
                             derivative:{
 
-                                fn: deriv, color: 'blue',
+                                fn: deriv, color: graphColor,
                                 updateOnMouseMove: true
                             }
                         }]
@@ -242,6 +258,7 @@ function inputReader(){
         else if(mathOption == "secant"){
             console.log(mathOption)
             var y = document.querySelector('#graphFunction').value;
+            var graphColor = document.getElementById("graph-color").value
             var x1s = document.querySelector('.x1s').value;
             var x2s = document.querySelector('.x2s').value;
 
@@ -264,7 +281,7 @@ function inputReader(){
                     grid: true,
                     data: [
                         {
-                            fn: y, color: 'blue'
+                            fn: y, color: graphColor
                         }]
                 }
             }
@@ -279,12 +296,12 @@ function inputReader(){
                         yAxis: { domain: [-5, 5] },
                         grid: true,
                         data: [{
-                            fn: y, color: 'blue',
+                            fn: y, color: graphColor,
                             secants: [{
-                                x0: x2sNum, color: 'blue',
+                                x0: x2sNum, color: graphColor,
                                 updateOnMouseMove: true
                             }, {
-                                x0: x1sNum, color: 'blue',
+                                x0: x1sNum, color: graphColor,
                                 updateOnMouseMove: true
                             }]
                         }]
@@ -295,6 +312,7 @@ function inputReader(){
             else if(mathOption == "derivative"){
                 console.log(mathOption)
                     var y = document.querySelector('#graphFunction').value;
+                    var graphColor = document.getElementById("graph-color").value
                     var deriv = math.derivative(y, 'x').toString()
                     var xDerValue = document.querySelector(".x-deriv").value
 
@@ -321,10 +339,10 @@ function inputReader(){
                         grid: true,
                         data: [
                             {
-                                fn: y, color: 'blue',
+                                fn: y, color: graphColor,
                                 derivative:{
     
-                                    fn: deriv, color: 'blue',
+                                    fn: deriv, color: graphColor,
                                     updateOnMouseMove: true
                                 }
                             }]
@@ -335,6 +353,7 @@ function inputReader(){
             else if(mathOption == "vector"){
                 console.log(mathOption)
                 var y = document.querySelector('#graphFunction').value;
+                var graphColor = document.getElementById("graph-color").value
                 var x1v = document.querySelector('.x1v').value;
                 var x2v = document.querySelector('.x2v').value;
                 var y1v = document.querySelector('.y1v').value;
@@ -357,7 +376,7 @@ function inputReader(){
                         grid: true,
                         data: [
                             {
-                                fn: y, color: 'blue'
+                                fn: y, color: graphColor
                             }]
                     }
                 }
@@ -384,6 +403,7 @@ function inputReader(){
             else if(mathOption == "annotations"){
                 console.log(mathOption)
                 var y = document.querySelector('#graphFunction').value;
+                var graphColor = document.getElementById("graph-color").value
                 var xa = document.querySelector('.xa').value;
                 var ya = document.querySelector('.ya').value;
                 
@@ -396,7 +416,7 @@ function inputReader(){
                         yAxis: { domain: [-5, 5] },
                         grid: true,
                         data: [{
-                            fn: y, color:'blue'
+                            fn: y, color: graphColor
                           }],
                           annotations: [{
                             x: xa
@@ -405,7 +425,6 @@ function inputReader(){
                           }]
             }
         
-
 
 
 
@@ -428,6 +447,7 @@ function inputReader(){
 
 function cancelMath(){
     var y = document.querySelector('#graphFunction').value;
+    var graphColor = document.getElementById("graph-color").value
     options={
         target: '#root',
         title: 'Graf',
@@ -438,7 +458,7 @@ function cancelMath(){
         grid: true,
         data: [
             {
-                fn: y, color: 'blue'
+                fn: y, color: graphColor
             }]
     }
     functionPlot(options)

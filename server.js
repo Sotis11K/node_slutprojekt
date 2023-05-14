@@ -49,7 +49,12 @@ app.post('/register', upload.single('img'), async (req,res) => {
   const db = require('./connection');
   const bcrypt = require('bcrypt')
   const multer = require('multer');
-
+  const session = require('express-session');
+  app.use(session({
+      secret: 'diuwaiudhiasudw',
+      resave: false,
+      saveUninitialized: true
+  }));
 
   var randomNumber = Math.floor(Math.random() * 1000000);
    const storage = multer.diskStorage({
@@ -72,19 +77,40 @@ app.post('/register', upload.single('img'), async (req,res) => {
   app.set('view engine', 'ejs');
   
   
+  
+  function requireLogin(req, res, next) {
+      if (req.session && req.session.userId) {
+          return next();
+        } else {
+            return res.redirect('/login');
+        }
+    }
 
-  app.get('/', function(req, res) {
+
+    
+  app.get('/', requireLogin, function(req, res) {
       res.render('index');
   });
   
  
 //   app.post('/upload', upload.single('file'), function(req, res) {
-//     res.send('File uploaded successfully.');
+//     res.send('File uploadwd successfully.');
 //     console.log('File uploaded successfully.');
 //   });
   
 
 
+
+
+app.get('/logout', function(req, res) {
+    req.session.destroy(function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect('/login');
+        }
+    });
+});
 
 
 
@@ -104,6 +130,7 @@ app.post('/login', async function(req, res) {
             const user = results[0];
             const isMatch = await bcrypt.compare(password, user.password);
             if (isMatch) {
+                req.session.userId = user.id;
                 res.redirect('/')
             } else {
                 res.status(401).send("Email or password is incorrect.");
@@ -162,9 +189,7 @@ app.get('/settings', function(req, res){
 })
 
 
-app.get('/logout', (req, res) =>{
-    res.render('logout')
-})
+
 
  app.get('/register', function(req,res){
     res.render('register')

@@ -39,10 +39,8 @@
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <p>History</p>
                     </div>
-                    <div class="selection-container">
-                        <a href="/settings">
-                            <i class="fa-solid fa-gear"></i>
-                        </a>
+                    <div class="selection-container" onclick="settingsReveal()">
+                        <i class="fa-solid fa-gear"></i>
                         <p>Settings</p>
                     </div>
                     <div class="selection-container">
@@ -139,13 +137,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="graph-container">
         <div id="root"></div>
+        <p>Change function color</p>
+        <input type="color" id="graph-color" value="#0000ff">
+        <button id="graph-color-button">Update</button>
     </div>
 
 
 
 <div class="profile-card">
-    <a href="/" id="profile-card-back">Back</a>
+    <button onclick="profileUnreveal()" id="profile-card-back">Back</button>
     <img id="profile-card-img" src="/assets/Images/defaltPFP.png" alt="Profile picture">
       <div class="information-container">
         <p id="usernameDisplay"></p>
@@ -164,8 +167,16 @@
 
 
 <div class="settings-card">
-    <a href="/" id="settings-card-back">Back</a>
+    <button onclick="settingsUnreveal()" id="settings-card-back">Back</button>
     <div class="settings-container">
+        <p>Settings</p>
+        <div class="settings-content">
+            <div class="settings-area color-settings">
+                <p>Select your desired theme:</p>
+                <input id="page-color" type="color">
+                <button onclick="pageTheme()">Submit</button>
+            </div>
+        </div>
     </div> 
 
 </div>
