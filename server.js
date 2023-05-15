@@ -58,7 +58,7 @@ app.post('/login', async function(req, res) {
     const email = req.body.email;
     const password = req.body.password;
     
-    let sql = "SELECT * FROM users WHERE email = ?";
+    let sql = "SELECT * FROM usersnode WHERE email = ?";
     db.query(sql, [email], async function(err, results) {
         if (err) {
             console.error("Error executing query:", err);
@@ -82,7 +82,7 @@ app.get('/get_data', function(request, response, next){
 
     var search_query = request.query.search_query;
     var query = `
-    SELECT username FROM users
+    SELECT username FROM usersnode
     WHERE username LIKE '%${search_query}%' 
     LIMIT 10
     `;
@@ -93,7 +93,7 @@ app.get('/get_data', function(request, response, next){
 });
 
 app.get('/data', (req, res) => {
-    db.query('SELECT * FROM users', (error, results, field) =>{
+    db.query('SELECT * FROM usersnode', (error, results, field) =>{
         if(error){
             console.error(error)
         }else{
@@ -122,7 +122,7 @@ app.get('/settings', function(req, res){
       const username = req.body.username;
       const email = req.body.email;
       const img = "/assets/Images/" + (randomNumber + path.extname(req.file.originalname))
-      const sqlInsert = "INSERT INTO users (username, email, country, password, img) VALUES (?, ?, ?, ?, ?)";
+      const sqlInsert = "INSERT INTO usersnode (username, email, country, password, img) VALUES (?, ?, ?, ?, ?)";
       db.query(sqlInsert, [username, email, country, hashedPassword, img]);
       res.redirect('/login');
     } catch(error) {
