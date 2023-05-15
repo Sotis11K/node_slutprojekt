@@ -24,7 +24,7 @@
                 <div class="settings-block">
                     <div class="selection-container">
                         <div class="search-container">
-                            <p>Search usernames</p>   
+                            <p id="username-p">Search usernames</p>   
                             <div class="user-submit">
                                 <input type="text" id="autocomplete_search" placeholder="Type username here" />
                                 <span id="search_result"></span>
@@ -72,60 +72,103 @@
                         <button class="math-calc" onclick="calcOption('secant')">Secants</button>
                         <button class="math-calc" onclick="calcOption('derivative')">Derivatives</button>
                         <button class="math-calc" onclick="calcOption('vector')">Vectors</button>
-                        <button class="math-calc" onclick="calcOption('annotations')">Annotations</button>
+                        <button class="math-calc" id="long" onclick="calcOption('annotations')">Annotations</button>
 
                         <!-- ## DISPLAYS ##  -->
 
                         <div class="y-container">
-                            <input class="x-value" type="number">
-                            <button class="xVal-update">Calculate</button>
+                            <button class="calc-back" onclick="calcBack('y')">Back</button>
+                            <p>Input x value for f(x)</p>
+                            <div class="input-calc-container">
+                                <input class="x-value" type="number">
+                                <button class="xVal-update">Calculate</button>
+                            </div>
                             <div class="xVal-output"></div>
 
-                            <p>simplify</p>
-                            <input type="text" class="simplify-string">
-                            <button class="xVal-update">Calculate</button>
-                            <div class="simplify-container"></div>
+                            <p>Enter an equation for simplification</p>
+                            <div class="input-calc-container">
+                                <input type="text" class="simplify-string">
+                                <button class="xVal-update">Calculate</button>
+                            </div>
+                                <div class="simplify-container"></div>
                         </div>
 
                         <div class="integral-container">
-                            <input class="x1t" type="number">
-                            <input class="x2t" type="number">
+                            <button class="calc-back" onclick="calcBack('integral')">Back</button>
+
+                            <div class="input-integral-container">
+                                <p>Input x1 value</p>
+                                <input class="x1t" type="number">
+                            </div>
+                            <div class="input-integral-container">
+                                <p>Input x2 value</p>
+                                <input class="x2t" type="number">
+                            </div>
                         </div>
 
                         <div class="tangent-container">
-                            <button id="tangent-activate">Activate tangent</button>
-                            <button id="tangent-deactivate">Deactivate tangent</button>
+                            <button class="calc-back" onclick="calcBack('tangent')">Back</button>
+
+                            <div class="tangent-buttons">
+                                <button id="tangent-activate">Activate tangent</button>
+                                <button id="tangent-deactivate">Deactivate tangent</button>
+                            </div>
                         </div>
 
+                    
                         <div class="secant-container">
-                            <input class="x1s" type="number">
-                            <input class="x2s" type="number">
+                            <button class="calc-back" onclick="calcBack('secant')">Back</button>
+
+                            <div class="input-secant-container">
+                                <p>Input x1 value</p>
+                                <input class="x1s" type="number">
+                                <p>Input x2 value</p>
+                                <input class="x2s" type="number">
+                            </div>
                         </div>
 
-                        <div class="derivative-container">
-                            <div class="deriv-output"></div>
-                            <input type="number" class="x-deriv">
-                            <button class="deriv-update">Update</button>
+                        <div class="derivative-container"> 
+                            <button class="calc-back" onclick="calcBack('derivative')">Back</button>
+
+                            <div class="input-derivative-container">
+                                <p>Derivative</p>
+                                <div class="deriv-output"></div>
+                                <p>Calculate f'(x)</p>
+                                <input type="number" class="x-deriv">
+                                <button class="deriv-update">Update</button>
+                                <div class="derivX-output"></div>
+                            </div>
                         </div>
 
                         <div class="vector-container">
-                            <p>x1</p>
-                            <input class="x1v" type="number">
-                            <p>y2</p>
-                            <input class="y1v" type="number">
+                            <button class="calc-back" onclick="calcBack('vector')">Back</button>
 
+                            <div class="input-vector1-container">
+                                <p>Input x1 value</p>
+                                <input class="x1v" type="number">
+                                <p>Input y1 value</p>
+                                <input class="y1v" type="number">
+                            </div>
 
-                            <p>x2</p>
-                            <input class="x2v" type="number">
-                            <p>y2</p>
-                            <input class="y2v" type="number">
-                            <button id="updateVec">Update</button>
+                            <div class="input-vector2-container">
+                                <p>Input x2 value</p>
+                                <input class="x2v" type="number">
+                                <p>Input y2 value</p>
+                                <input class="y2v" type="number">
+                                <button id="updateVec">Update</button>
+                            </div>
 
                         </div>
 
                         <div class="annotations-container">
-                            x<input class="xa" type="number">
-                            y<input class="ya" type="number">
+                            <button class="calc-back" onclick="calcBack('annotations')">Back</button>
+
+                            <div class="input-annotations-container">
+                                <p>Input x annotation</p>
+                                <input class="xa" type="number">
+                                <p>Input y annotation</p>
+                                <input class="ya" type="number">
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,48 +1,3 @@
-/*const express = require('express');
-const app = express();
-const db = require('./connection');
-const bcrypt = require('bcrypt')
-const multer = require('multer');
-const storage = multer.memoryStorage();
-const upload = multer({storage: storage})
-
-const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: false }))
-const path = require('path');
-
-
-
-app.use(express.static(path.resolve('./public')));
-
-app.set('view engine', 'ejs');
-
-
-app.get('/', function(req, res) {
-    const img = req.file ? req.file.buffer.toString('base64') : null;
-    res.render('index', { img: img });
-  });
-
-app.post('/register', upload.single('img'), async (req,res) => {
-
-    try {
-      const img = req.file.buffer.toString('base64');
-      const hashedPassword = await bcrypt.hash(req.body.password, 11);
-      const password = req.body.password;
-      const country = req.body.country;
-      const username = req.body.username;
-      const email = req.body.email;
-      const sqlInsert = "INSERT INTO users (username, email, country, password, img) VALUES (?, ?, ?, ?, ?)";
-      db.query(sqlInsert, [username, email, country, hashedPassword, img]);
-      console.log(img);
-      //res.redirect('/login');
-    } catch(error) {
-      console.log(error);
-      //res.redirect('/register');
-    }
-  });*/
-
-  
-  
   const express = require('express');
   const app = express();
   const path = require('path');
@@ -66,17 +21,12 @@ app.post('/register', upload.single('img'), async (req,res) => {
         cb(null, randomNumber + path.extname(file.originalname))
     }
 })
-
    const upload = multer({storage: storage})
-  
   const bodyParser = require('body-parser')
   app.use(bodyParser.urlencoded({ extended: false }))
-  
   app.use(express.static(path.resolve('./public')));
-  
   app.set('view engine', 'ejs');
-  
-  
+ 
   
   function requireLogin(req, res, next) {
       if (req.session && req.session.userId) {
@@ -86,21 +36,13 @@ app.post('/register', upload.single('img'), async (req,res) => {
         }
     }
 
-
-    
   app.get('/', requireLogin, function(req, res) {
       res.render('index');
   });
   
- 
-//   app.post('/upload', upload.single('file'), function(req, res) {
-//     res.send('File uploadwd successfully.');
-//     console.log('File uploaded successfully.');
-//   });
-  
-
-
-
+  app.get('/', function(req, res) {
+    res.render('index');
+});
 
 app.get('/logout', function(req, res) {
     req.session.destroy(function(err) {
@@ -111,9 +53,6 @@ app.get('/logout', function(req, res) {
         }
     });
 });
-
-
-
 
 app.post('/login', async function(req, res) {
     const email = req.body.email;
@@ -139,7 +78,6 @@ app.post('/login', async function(req, res) {
     });
 });
 
-
 app.get('/get_data', function(request, response, next){
 
     var search_query = request.query.search_query;
@@ -154,7 +92,6 @@ app.get('/get_data', function(request, response, next){
 
 });
 
-
 app.get('/data', (req, res) => {
     db.query('SELECT * FROM users', (error, results, field) =>{
         if(error){
@@ -165,21 +102,6 @@ app.get('/data', (req, res) => {
     })
   });
 
-  app.get('/colors', (req, res) => {
-    db.query('SELECT * FROM user_settings', (error, results, field) =>{
-        if(error){
-            console.error(error)
-        }else{
-            res.json(results)
-        }
-    })
-  });
-  
-
-
-
-
-
 app.get('/login', function(req, res) {
     res.render('login');
 });
@@ -188,54 +110,10 @@ app.get('/settings', function(req, res){
     res.render('settings')
 })
 
-
-
-
  app.get('/register', function(req,res){
     res.render('register')
  });
 
- 
-  
-
-app.post('/settings', (req, res) =>{
-    try{
-
-        const color = req.body.color
-        const sqlInsert = "INSERT INTO user_settings (themeColor) VALUES (?);"
-        db.query(sqlInsert, [color])
-        res.redirect("/settings")
-    }
-    catch{
-        res.redirect('/settings')
-    }
-    
-})
-
-
-
- /*app.post('/register', upload.single('img'), async (req,res) =>{
-     try{
-        const img = req.file.buffer.toString('base64');
-         const hashedPassword = await bcrypt.hash(req.body.password, 11)
-         const password = req.body.password
-         //const img = req.file.filename;
-         const country = req.body.country
-         const username = req.body.username;
-         const email = req.body.email;
-         const sqlInsert = "INSERT INTO users (username, email, country, password, img) VALUES (?, ?, ?, ?, ?)";
-         db.query(sqlInsert, [username, email, country, hashedPassword, img])
-        console.log(img)
-         //res.redirect('/login')
-     }
-     catch{
-         res.redirect('/register')
-     }
- });*/
-
- 
-  
-  
  app.post('/register', upload.single('img'), async (req,res) => {
     try {
       const hashedPassword = await bcrypt.hash(req.body.password, 11);
@@ -243,7 +121,7 @@ app.post('/settings', (req, res) =>{
       const country = req.body.country;
       const username = req.body.username;
       const email = req.body.email;
-    const img = "/assets/Images/" + (randomNumber + path.extname(req.file.originalname))
+      const img = "/assets/Images/" + (randomNumber + path.extname(req.file.originalname))
       const sqlInsert = "INSERT INTO users (username, email, country, password, img) VALUES (?, ?, ?, ?, ?)";
       db.query(sqlInsert, [username, email, country, hashedPassword, img]);
       res.redirect('/login');
@@ -252,11 +130,6 @@ app.post('/settings', (req, res) =>{
       res.redirect('/register');
     }
 });
-
-
-
- 
-
 
 app.listen(process.env.PORT || 3000, function(){
    console.log('server, port 3000');

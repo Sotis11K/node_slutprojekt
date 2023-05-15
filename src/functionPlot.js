@@ -5,39 +5,85 @@ import mathjsSimpleIntegral from 'mathjs-simple-integral';
 const config = { }
 const math = create(all, config)
 
+var graphWidth = 700;
+var graphHeight = 500;
 
 
-var y = 'x^2'
-var graphColor = "#0000ff"
+if (window.matchMedia("(min-width: 801px)").matches) {
+    graphWidth = 700;
+    graphHeight = 500;
+} else {
+    graphWidth = 390;
+    graphHeight = 370;
+}
 
-var x1i = ''
-var x1s = ''
-var x2i = ''
-var x2s = ''
+window.addEventListener("resize", function() {
+    if (window.matchMedia("(min-width: 801px)").matches) {
+        graphWidth = 700;
+        graphHeight = 500;
+        var options = {
+            target: '#root',
+            title: 'Graf',
+            width: graphWidth,
+            height: graphHeight,
+            xAxis: { domain: [-5, 5] },
+            yAxis: { domain: [-5, 5] },
+            grid: true,
+            data: [
+                {
+                    fn: y,
+                    color: graphColor
+                }
+            ]
+        }
+        functionPlot(options)
+    } else {
+        graphWidth = 390;
+        graphHeight = 370;
+        var options = {
+            target: '#root',
+            title: 'Graf',
+            width: graphWidth,
+            height: graphHeight,
+            xAxis: { domain: [-5, 5] },
+            yAxis: { domain: [-5, 5] },
+            grid: true,
+            data: [
+                {
+                    fn: y,
+                    color: graphColor
+                }
+            ]
+        }
+        functionPlot(options)
+    }
+});
 
+var y = 'x^2';
+var graphColor = "#0000ff";
 
+var x1i = '';
+var x1s = '';
+var x2i = '';
+var x2s = '';
 
-var options={
+var options = {
     target: '#root',
     title: 'Graf',
-    width: 700,
-    height: 500,
+    width: graphWidth,
+    height: graphHeight,
     xAxis: { domain: [-5, 5] },
     yAxis: { domain: [-5, 5] },
     grid: true,
     data: [
         {
-        fn: y, color: graphColor
-    }]
-}
+            fn: y,
+            color: graphColor
+        }
+    ]
+};
 
 
-
-/*window.onload = (event) => {
-  var submit = document.querySelector(".submit")
-  submit.addEventListener("click", inputReader)
-  functionPlot(options)
-};*/
 
 window.onload = (event) => {
         [document.querySelector(".submit"), document.querySelector("#tangent-activate"), document.querySelector("#updateVec"), document.querySelectorAll(".xVal-update")[0], document.querySelectorAll(".xVal-update")[1], document.querySelector(".deriv-update"), document.getElementById("graph-color-button")].forEach(element=>{
@@ -51,11 +97,11 @@ window.onload = (event) => {
 function inputReader(){
     if(document.querySelector('#graphFunction').value == ""){
         var graphColor = document.getElementById("graph-color").value
-        console.log("ingen sträng")
+        alert("No input detected in graph input")
         options={
             target: '#root',
             title: 'Graf',
-            width: 700,
+            width: graphWidth,
             height: 500,
             xAxis: { domain: [-5, 5] },
             yAxis: { domain: [-5, 5] },
@@ -95,7 +141,6 @@ function inputReader(){
                 var fx = (math.simplify(y).evaluate({x:xVal})).toString()
 
                 if(document.querySelector('.x-value').value === ''){
-                    console.log("har inte sträng")
                     var p = document.createElement("p")
                     p.innerHTML = "f(x) = "+y
                     document.querySelector(".xVal-output").append(p)
@@ -103,7 +148,6 @@ function inputReader(){
 
 
                 else if(document.querySelector('.x-value').value != ''){
-                    console.log("har sträng")
                     var p = document.createElement('p')
                     p.innerHTML = "f("+xVal+") = "+fx
                     document.querySelector(".xVal-output").append(p)
@@ -148,6 +192,7 @@ function inputReader(){
                 var x2t = document.querySelector('.x2t').value;
 
                 if(x1t == '' || x2t == '' || x1t>x2t || x1t==x2t){
+                    alert("No input in integrals detected")
                     options={
                         target: '#root',
                         title: 'Graf',
@@ -163,49 +208,6 @@ function inputReader(){
                     }
                 }
                     else if(x1t != '' || x2t != ''){
-                       
-                        console.log("Hej")
-                        console.log(math.integral('x^2', 'x')); // 'x ^ 3 / 3'
-                        console.log(math.integral('x^2', 'x').toString()); // 'x ^ 3 / 3'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
                         options={
                             target: '#root',
                             title: 'Graf',
@@ -222,7 +224,6 @@ function inputReader(){
                                 }]
                             }
                         }
-                    
             }
       
     
@@ -246,7 +247,6 @@ function inputReader(){
                         {
                             fn: y, color: 'blue',
                             derivative:{
-
                                 fn: deriv, color: graphColor,
                                 updateOnMouseMove: true
                             }
@@ -262,15 +262,31 @@ function inputReader(){
             var x1s = document.querySelector('.x1s').value;
             var x2s = document.querySelector('.x2s').value;
 
+
             var x1sNum = parseInt(x1s)
             var x2sNum = parseInt(x2s)
 
             console.log(x1sNum)
             console.log(x2sNum)
 
-
-
-            if(x1s == '' || x2s == '' || x1s>x2s || x1s==x2s){
+            if(x1s == '' || x2s == '' || x1s>x2s){
+                alert("No input detected in secants")
+                options={
+                    target: '#root',
+                    title: 'Graf',
+                    width: 700,
+                    height: 500,
+                    xAxis: { domain: [-5, 5] },
+                    yAxis: { domain: [-5, 5] },
+                    grid: true,
+                    data: [
+                        {
+                            fn: y, color: graphColor
+                        }]
+                }
+            }
+            else if(x1sNum>x2sNum){
+                alert("x1 can not be larger than x2")
                 options={
                     target: '#root',
                     title: 'Graf',
@@ -286,7 +302,6 @@ function inputReader(){
                 }
             }
                 else if(!x1s == '' || !x2s == ''){
-                    console.log("funkar")
                     options={
                         target: '#root',
                         title: 'Graf',
@@ -298,10 +313,10 @@ function inputReader(){
                         data: [{
                             fn: y, color: graphColor,
                             secants: [{
-                                x0: x2sNum, color: graphColor,
+                                x0: x1sNum, color: graphColor,
                                 updateOnMouseMove: true
                             }, {
-                                x0: x1sNum, color: graphColor,
+                                x0: x2sNum, color: graphColor,
                                 updateOnMouseMove: true
                             }]
                         }]
@@ -320,12 +335,10 @@ function inputReader(){
                     p1.innerHTML = deriv
                     document.querySelector(".deriv-output").append(p1)
 
-                   
-
-                    if(xDerValue != null || xDerValue != ""){
+                    if(xDerValue != ""){
                         var p3 = document.createElement("p")
-                        p3.innerHTML = (math.derivative(y, 'x').evaluate({x:xDerValue})).toString()
-                        document.querySelector(".deriv-output").append(p3)
+                        p3.innerHTML = "f '("+xDerValue+") = "+(math.derivative(y, 'x').evaluate({x:xDerValue})).toString()
+                        document.querySelector(".derivX-output").append(p3)
                     }
                     
     
@@ -366,6 +379,7 @@ function inputReader(){
                 var y2vNum = parseInt(y2v)
     
                 if(x1v == '' || x2v == '' || y1v == '' || y2v == ''){
+                    alert("No input detected in vector from either x1, x2, x3 or x4")
                     options={
                         target: '#root',
                         title: 'Graf',
@@ -424,11 +438,6 @@ function inputReader(){
                             y: ya
                           }]
             }
-        
-
-
-
-
         }
         
         var p = document.createElement("p")
@@ -437,9 +446,7 @@ function inputReader(){
         functionPlot(options);
     }
 
-
 };
-
 
 [document.querySelector("#tangent-deactivate")].forEach(element=>{
     element.addEventListener('click', cancelMath)
@@ -463,45 +470,3 @@ function cancelMath(){
     }
     functionPlot(options)
 }
-
-
-/*
-if(tangent == 2){
-    options={
-        target: '#root',
-        title: 'Graf',
-        width: 700,
-        height: 500,
-        xAxis: { domain: [-5, 5] },
-        yAxis: { domain: [-5, 5] },
-        grid: true,
-        data: [
-            {
-                fn: 'x^2', color: 'blue',
-                derivative: {
-                    fn: '2 * x',
-                    updateOnMouseMove: true
-                }
-            }]
-        }
-        tangent--;
-}
-else if(tangent == 1){
-    options={
-        target: '#root',
-        title: 'Graf',
-        width: 700,
-        height: 500,
-        xAxis: { domain: [-5, 5] },
-        yAxis: { domain: [-5, 5] },
-        grid: true,
-        data: [
-            {
-                fn: y, color: 'blue'
-            }]
-        }
-        tangent++;
-}*/
-
-
-

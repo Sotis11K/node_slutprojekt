@@ -9,82 +9,252 @@ html, body {
   width: 100%;
 }
 
-body {
-  background-color: black;
+@media only screen and (width >= 900px) {
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(to bottom, hsl(0, 0%, 25%), white);
+    gap: 10rem;
+  }
+  .container .information-box {
+    top: 0;
+    box-shadow: 0px 0px 30px 5px black;
+    left: 0;
+    background-color: hsl(0, 0%, 25%);
+    width: 50%;
+    height: 80%;
+    border-radius: 0.25rem;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .container .information-box ul {
+    gap: 2rem;
+  }
+  .container .information-box ul li {
+    color: white;
+  }
+  .container .information-box ul li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .container .information-box h1 {
+    text-align: center;
+  }
+  .container .back {
+    position: absolute;
+    margin: 2rem;
+    top: 0;
+    left: 0;
+    background-color: hsl(200, 91%, 36%);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 3px 0px #2BB2F5;
+  }
+  .container .back:hover {
+    box-shadow: 0 0 5px 2px #2BB2F5;
+  }
+  .container h1 {
+    color: white;
+    border-bottom: 1px white solid;
+  }
+  .container .login-block {
+    background-color: hsl(0, 0%, 14%);
+    height: 100%;
+    width: 30%;
+    box-shadow: 0px 0px 30px 5px black;
+    display: grid;
+    place-items: center;
+  }
+  .container .login-block form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 1rem;
+    height: 100%;
+    width: 60%;
+    font-size: 1.5rem;
+  }
+  .container .login-block form input {
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    text-indent: 10px;
+    background-color: black;
+    color: white;
+  }
+  .container .login-block form input:focus {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+  }
+  .container .login-block form #img-file-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    background-color: black;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+  }
+  .container .login-block form #img-file-container:focus, .container .login-block form #img-file-container:hover {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+  }
+  .container .login-block form #img {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+  }
+  .container .login-block form button, .container .login-block form a {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    text-indent: 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.3rem 0px;
+    cursor: pointer;
+  }
+  .container .login-block form button:hover, .container .login-block form a:hover {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+  }
 }
-
-.container {
-  height: 100%;
-  width: 100%;
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 25%), white);
-  gap: 2rem;
-}
-.container .back {
-  position: absolute;
-  margin: 2rem;
-  top: 0;
-  left: 0;
-  background-color: hsl(200, 91%, 36%);
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: white;
-  box-shadow: 0 0 3px 0px #2BB2F5;
-}
-.container .back:hover {
-  box-shadow: 0 0 5px 2px #2BB2F5;
-}
-.container h1 {
-  color: white;
-}
-.container .login-block {
-  background-color: hsl(0, 0%, 14%);
-  height: 100%;
-  width: 30%;
-  box-shadow: 0px 0px 30px 5px black;
-  display: grid;
-  place-items: center;
-}
-.container .login-block form {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  gap: 1rem;
-  height: 100%;
-  width: 60%;
-  font-size: 1.5rem;
-}
-.container .login-block form input {
-  width: 100%;
-  height: 2.5rem;
-  outline: none;
-  border: none;
-  border-radius: 0.25rem;
-  box-shadow: 0 0 3px 2px #2BB2F5;
-  text-indent: 10px;
-  background-color: black;
-  color: white;
-}
-.container .login-block form input:focus {
-  box-shadow: 0 0 6px 4px #2BB2F5;
-}
-.container .login-block form button, .container .login-block form a {
-  width: 100%;
-  height: -moz-max-content;
-  height: max-content;
-  outline: none;
-  border: none;
-  border-radius: 0.25rem;
-  box-shadow: 0 0 3px 2px #2BB2F5;
-  text-indent: 10px;
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1rem;
-  padding: 0.3rem 0px;
-  cursor: pointer;
-}
-.container .login-block form button:hover, .container .login-block form a:hover {
-  box-shadow: 0 0 6px 4px #2BB2F5;
+@media only screen and (width <= 901px) {
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 6rem;
+  }
+  .container .information-box {
+    top: 0;
+    box-shadow: 0px 0px 30px 5px black;
+    left: 0;
+    background-color: hsl(0, 0%, 25%);
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    border-radius: 0.25rem;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .container .information-box ul {
+    gap: 2rem;
+  }
+  .container .information-box ul li {
+    color: white;
+  }
+  .container .information-box ul li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .container .information-box h1 {
+    text-align: center;
+  }
+  .container h1 {
+    color: white;
+    border-bottom: 1px white solid;
+  }
+  .container .login-block {
+    padding: 1rem 0;
+    background-color: hsl(0, 0%, 14%);
+    height: -moz-max-content;
+    height: max-content;
+    width: 100%;
+    top: 0;
+    box-shadow: 0px 0px 30px 5px black;
+    display: grid;
+    place-items: center;
+  }
+  .container .login-block form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 1rem;
+    height: 100%;
+    width: 60%;
+    font-size: 1.5rem;
+  }
+  .container .login-block form input {
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    text-indent: 10px;
+    background-color: black;
+    color: white;
+  }
+  .container .login-block form input:focus {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+  }
+  .container .login-block form #img-file-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    background-color: black;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+  }
+  .container .login-block form #img-file-container:focus, .container .login-block form #img-file-container:hover {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+  }
+  .container .login-block form #img {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+  }
+  .container .login-block form button, .container .login-block form a {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    text-indent: 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.3rem 0px;
+    cursor: pointer;
+  }
+  .container .login-block form button:hover, .container .login-block form a:hover {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+  }
 }/*# sourceMappingURL=loginregister_style.css.map */

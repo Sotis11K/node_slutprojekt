@@ -117,12 +117,14 @@ body {
   padding: 0.5rem 1rem;
   color: white;
   text-decoration: none;
+  border-radius: 0.25rem;
   background-color: black;
   width: 100%;
 }
 .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit .list-group .list-group-item:hover {
   cursor: pointer;
-  background-color: red;
+  background-color: transparent;
+  border: 1px solid #2BB2F5;
 }
 .container .user-coloumn .settings-container .settings-block .selection-container i {
   color: white;
@@ -200,9 +202,8 @@ body {
   margin-top: 4%;
   gap: 2rem;
   padding: 10px;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(4, 18.865%);
+  display: flex;
+  flex-wrap: wrap;
 }
 .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc {
   height: 5rem;
@@ -211,6 +212,7 @@ body {
   outline: none;
   border: solid #2BB2F5;
   color: white;
+  width: 19%;
 }
 .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc:hover {
   cursor: pointer;
@@ -219,20 +221,148 @@ body {
 }
 .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container {
   display: none;
-  position: absolute;
-  background-color: red;
-  width: 25%;
-  height: -moz-max-content;
-  height: max-content;
-}
-.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container input {
-  height: 5rem;
+  position: relative;
   width: 100%;
-  background-color: yellow;
+  height: 100%;
 }
-.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container input:hover {
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .calc-back {
+  left: 0;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container p {
+  font-size: 1.1rem;
+  color: white;
+  background-color: black;
+  border: solid 2px #2BB2F5;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input {
+  height: 2rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border: solid 2px #2BB2F5;
+  background-color: black;
+  color: white;
+  border-radius: 0.25rem;
+  text-indent: 1rem;
+  font-size: 1rem;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input:focus {
   cursor: pointer;
-  background-color: white;
+  background-color: transparent;
+  box-shadow: 0 0 5px 2px #2BB2F5;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container button {
+  outline: none;
+  color: white;
+  background-color: black;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #2BB2F5;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px #2BB2F5;
+  background-color: transparent;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container div {
+  margin: 0.5rem 0 1rem 0;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button {
+  outline: none;
+  border: none;
+  border: solid 2px #2BB2F5;
+  padding: 0.25rem 0.5rem;
+  font-size: 2rem;
+  color: white;
+  background-color: black;
+  border-radius: 0.25rem;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button:focus {
+  background-color: transparent;
+  color: white;
+  box-shadow: 0 0 5px 2px #2BB2F5;
+  cursor: pointer;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input {
+  height: 2rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border: solid 2px #2BB2F5;
+  background-color: black;
+  color: white;
+  border-radius: 0.25rem;
+  text-indent: 1rem;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input:focus {
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: 0 0 5px 2px #2BB2F5;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 2rem;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input {
+  height: 2rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border: solid 2px #2BB2F5;
+  background-color: black;
+  color: white;
+  border-radius: 0.25rem;
+  text-indent: 1rem;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input:focus {
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: 0 0 5px 2px #2BB2F5;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button {
+  outline: none;
+  border: none;
+  border: solid 2px #2BB2F5;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  background-color: black;
+  border-radius: 0.25rem;
+}
+.container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button:focus {
+  background-color: transparent;
+  color: white;
+  box-shadow: 0 0 5px 2px #2BB2F5;
+  cursor: pointer;
 }
 .container .user-coloumn .category-container h2 {
   text-align: center;
@@ -280,20 +410,6 @@ body {
   margin-right: 1rem;
 }
 
-/*
-
-estonia
-finland
-australia
-moldova
-tyskland
-
-isreal
-
-
-
-
-*/
 .profile-card, .settings-card {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -423,6 +539,10 @@ isreal
   align-items: center;
   gap: 1rem;
 }
+.graph-container p {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 .graph-container button {
   width: -moz-max-content;
   width: max-content;
@@ -464,4 +584,1156 @@ text {
 .domain {
   stroke: white;
   opacity: 0.6;
+}
+
+@media only screen and (width <= 1140px) {
+  body {
+    background-color: midnightblue;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: -moz-max-content;
+    height: max-content;
+    width: 100%;
+  }
+  .container .user-coloumn {
+    background-color: hsl(0, 0%, 14%);
+    height: 20%;
+    position: relative;
+    top: 0;
+    width: 100%;
+    box-shadow: 5px 0 3px -1px hsl(0, 0%, 20%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container .user-coloumn .settings-container {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    width: 0%;
+    flex-direction: row;
+    left: 0;
+    border-left: solid white 2px;
+    z-index: 1;
+  }
+  .container .user-coloumn .settings-container .button {
+    margin-left: 0.6rem;
+    font-size: 2rem;
+    color: white;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .container .user-coloumn .settings-container .button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .container .user-coloumn .settings-container .settings-block {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(0, 0%, 25%);
+    border-right: white solid 2px;
+    box-shadow: 0 0 10px 2px white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 5px;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 5px;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit {
+    width: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit #autocomplete_search {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    padding: 0.25rem 0.5rem;
+    background-color: black;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    color: white;
+    border-radius: 0.25rem;
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit .list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0.25rem;
+    gap: 0.25rem;
+    margin: 0.25rem 0 0 0;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit .list-group .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    background-color: black;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit .list-group .list-group-item:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #2BB2F5;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container i {
+    color: white;
+    font-size: 2rem;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container i:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  .container .user-coloumn h1 {
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+    width: 80%;
+    border-bottom: solid 0.15rem;
+  }
+  .container .user-coloumn .graph-input {
+    margin-top: 10%;
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .container .user-coloumn .graph-input input {
+    width: 50%;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    text-indent: 10px;
+    background-color: black;
+    color: white;
+  }
+  .container .user-coloumn .graph-input input:focus {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+  }
+  .container .user-coloumn .graph-input .submit {
+    width: 30%;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    height: 1.5rem;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+  }
+  .container .user-coloumn .graph-input .submit:hover {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+    cursor: pointer;
+  }
+  .container .user-coloumn .category-container {
+    margin-top: 10%;
+    width: 100%;
+    height: 100%;
+  }
+  .container .user-coloumn .category-container .calculate-container {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection {
+    overflow: auto;
+    min-width: 80%;
+    max-width: 80%;
+    height: 16rem;
+    margin-top: 4%;
+    gap: 2rem;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc {
+    height: 5rem;
+    background-color: hsl(0, 0%, 0%);
+    border-radius: 0.25rem;
+    outline: none;
+    border: solid #2BB2F5;
+    color: white;
+    width: 19%;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+    transition-duration: 0.2s;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .calc-back {
+    left: 0;
+    position: relative;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container p {
+    font-size: 1.1rem;
+    color: white;
+    background-color: black;
+    border: solid 2px #2BB2F5;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input {
+    height: 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    background-color: black;
+    color: white;
+    border-radius: 0.25rem;
+    text-indent: 1rem;
+    font-size: 1rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input:focus {
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container button {
+    outline: none;
+    color: white;
+    background-color: black;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #2BB2F5;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    background-color: transparent;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container div {
+    margin: 0.5rem 0 1rem 0;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button {
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    padding: 0.25rem 0.5rem;
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    border-radius: 0.25rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button:focus {
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    cursor: pointer;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input {
+    height: 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    background-color: black;
+    color: white;
+    border-radius: 0.25rem;
+    text-indent: 1rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input:focus {
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 2rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input {
+    height: 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    background-color: black;
+    color: white;
+    border-radius: 0.25rem;
+    text-indent: 1rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input:focus {
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button {
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    background-color: black;
+    border-radius: 0.25rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button:focus {
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    cursor: pointer;
+  }
+  .container .user-coloumn .category-container h2 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    width: 80%;
+    border-bottom: solid 0.15rem;
+  }
+  .container .user-coloumn .category-container .history-container {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container .user-coloumn .category-container .history-container .history {
+    display: block;
+    overflow: auto;
+    min-width: 80%;
+    max-width: 80%;
+    height: 16rem;
+    margin-top: 4%;
+    gap: 2rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .user-coloumn .category-container .history-container .history p {
+    background-color: black;
+    box-shadow: 0 0 2px 2px #2BB2F5;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .container #root {
+    display: grid;
+    place-items: center;
+    width: -moz-max-content;
+    width: max-content;
+    margin-right: 1rem;
+  }
+  .profile-card, .settings-card {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    border-radius: 0.25rem;
+    height: 80%;
+    width: 80%;
+    display: none;
+  }
+  .profile-card img, .settings-card img {
+    width: 70%;
+    height: 70%;
+    transform: translate(-50%);
+    left: 50%;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .profile-card .information-container, .settings-card .information-container {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background-color: hsl(0, 0%, 14%);
+    height: -moz-max-content;
+    height: max-content;
+    padding: 1rem 0rem;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+  }
+  .profile-card .information-container p, .settings-card .information-container p {
+    color: white;
+    font-size: 2rem;
+    border: solid #2BB2F5 1px;
+    background-color: black;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .profile-card .settings-container, .settings-card .settings-container {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background-color: hsl(0, 0%, 14%);
+    height: 100%;
+    width: 100%;
+    border-radius: 0.25rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .profile-card .settings-container p, .settings-card .settings-container p {
+    color: white;
+    font-size: 3rem;
+    border-bottom: 1px solid white;
+  }
+  .profile-card .settings-container .settings-content, .settings-card .settings-container .settings-content {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  .profile-card .settings-container .settings-content .settings-area, .settings-card .settings-container .settings-content .settings-area {
+    border: solid #2BB2F5;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    background-color: black;
+    height: 20%;
+    width: 100%;
+  }
+  .profile-card .settings-container .settings-content .settings-area button, .settings-card .settings-container .settings-content .settings-area button {
+    border: solid #2BB2F5;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    background-color: black;
+  }
+  .profile-card .settings-container .settings-content .settings-area button:hover, .settings-card .settings-container .settings-content .settings-area button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+  }
+  .profile-card .settings-container .settings-content .color-settings, .settings-card .settings-container .settings-content .color-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .profile-card .settings-container .settings-content .color-settings p, .settings-card .settings-container .settings-content .color-settings p {
+    border: none;
+    font-size: 2rem;
+  }
+  .profile-card #profile-card-back, .profile-card #settings-card-back, .settings-card #profile-card-back, .settings-card #settings-card-back {
+    width: -moz-max-content;
+    width: max-content;
+    top: 3%;
+    left: 3%;
+    border: solid #2BB2F5;
+    background-color: black;
+    border-radius: 0.25rem;
+    position: absolute;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    color: white;
+    z-index: 1;
+  }
+  .profile-card #profile-card-back:hover, .profile-card #settings-card-back:hover, .settings-card #profile-card-back:hover, .settings-card #settings-card-back:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+  }
+  .graph-container {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    position: relative;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .graph-container p {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .graph-container button {
+    width: -moz-max-content;
+    width: max-content;
+    border: solid #2BB2F5;
+    background-color: black;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    color: white;
+  }
+  .graph-container button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+  }
+  text.title {
+    stroke: white;
+  }
+  text {
+    color: white;
+  }
+  .tick line {
+    stroke: white;
+    opacity: 0.3;
+  }
+  .annotations text {
+    stroke: white;
+  }
+  .origin {
+    stroke: white;
+    opacity: 0.6;
+  }
+  .domain {
+    stroke: white;
+    opacity: 0.6;
+  }
+}
+@media only screen and (width <= 800px) {
+  body {
+    background-color: purple;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: -moz-max-content;
+    height: max-content;
+    width: 100%;
+  }
+  .container .user-coloumn {
+    background-color: hsl(0, 0%, 14%);
+    height: 20%;
+    position: relative;
+    top: 0;
+    width: 100%;
+    box-shadow: 5px 0 3px -1px hsl(0, 0%, 20%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container .user-coloumn .settings-container {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    width: 0%;
+    flex-direction: row;
+    left: 0;
+    border-left: solid white 2px;
+    z-index: 1;
+  }
+  .container .user-coloumn .settings-container .button {
+    margin-left: 0.6rem;
+    font-size: 2rem;
+    color: white;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .container .user-coloumn .settings-container .button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .container .user-coloumn .settings-container .settings-block {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(0, 0%, 25%);
+    border-right: white solid 2px;
+    box-shadow: 0 0 10px 2px white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 5px;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 5px;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit {
+    width: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit #autocomplete_search {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    padding: 0.25rem 0.5rem;
+    background-color: black;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    color: white;
+    border-radius: 0.25rem;
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit .list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0.25rem;
+    gap: 0.25rem;
+    margin: 0.25rem 0 0 0;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit .list-group .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    background-color: black;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container .search-container .user-submit .list-group .list-group-item:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #2BB2F5;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container i {
+    color: white;
+    font-size: 2rem;
+  }
+  .container .user-coloumn .settings-container .settings-block .selection-container i:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  .container .user-coloumn h1 {
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+    width: 80%;
+    border-bottom: solid 0.15rem;
+  }
+  .container .user-coloumn .graph-input {
+    margin-top: 10%;
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .container .user-coloumn .graph-input input {
+    width: 50%;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+    text-indent: 10px;
+    background-color: black;
+    color: white;
+  }
+  .container .user-coloumn .graph-input input:focus {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+  }
+  .container .user-coloumn .graph-input .submit {
+    width: 30%;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    height: 1.5rem;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 3px 2px #2BB2F5;
+  }
+  .container .user-coloumn .graph-input .submit:hover {
+    box-shadow: 0 0 6px 4px #2BB2F5;
+    cursor: pointer;
+  }
+  .container .user-coloumn .category-container {
+    margin-top: 10%;
+    width: 100%;
+    height: 100%;
+  }
+  .container .user-coloumn .category-container .calculate-container {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection {
+    overflow: auto;
+    min-width: 80%;
+    max-width: 80%;
+    height: 16rem;
+    margin-top: 4%;
+    gap: 2rem;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc {
+    height: 5rem;
+    background-color: hsl(0, 0%, 0%);
+    border-radius: 0.25rem;
+    outline: none;
+    border: solid #2BB2F5;
+    color: white;
+    width: 19%;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .math-calc:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+    transition-duration: 0.2s;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection #long {
+    font-size: 0.5rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .calc-back, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .calc-back {
+    left: 0;
+    position: relative;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container p, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container p {
+    font-size: 1.1rem;
+    color: white;
+    background-color: black;
+    border: solid 2px #2BB2F5;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input {
+    height: 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    background-color: black;
+    color: white;
+    border-radius: 0.25rem;
+    text-indent: 1rem;
+    font-size: 1rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container input:focus {
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container button {
+    outline: none;
+    color: white;
+    background-color: black;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #2BB2F5;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-calc-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-annotations-container button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    background-color: transparent;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container div, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container div {
+    margin: 0.5rem 0 1rem 0;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button {
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    padding: 0.25rem 0.5rem;
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    border-radius: 0.25rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .tangent-buttons button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .tangent-buttons button:focus {
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    cursor: pointer;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input {
+    height: 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    background-color: black;
+    color: white;
+    border-radius: 0.25rem;
+    text-indent: 1rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector1-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector1-container input:focus {
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 2rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input {
+    height: 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    background-color: black;
+    color: white;
+    border-radius: 0.25rem;
+    text-indent: 1rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container .input-vector2-container input:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container .input-vector2-container input:focus {
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button {
+    outline: none;
+    border: none;
+    border: solid 2px #2BB2F5;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    background-color: black;
+    border-radius: 0.25rem;
+  }
+  .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .y-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .integral-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .tangent-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .secant-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .derivative-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .vector-container button:focus, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button:hover, .container .user-coloumn .category-container .calculate-container .calculate-selection .annotations-container button:focus {
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    cursor: pointer;
+  }
+  .container .user-coloumn .category-container h2 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    width: 80%;
+    border-bottom: solid 0.15rem;
+  }
+  .container .user-coloumn .category-container .history-container {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container .user-coloumn .category-container .history-container .history {
+    display: block;
+    overflow: auto;
+    min-width: 80%;
+    max-width: 80%;
+    height: 16rem;
+    margin-top: 4%;
+    gap: 2rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .user-coloumn .category-container .history-container .history p {
+    background-color: black;
+    box-shadow: 0 0 2px 2px #2BB2F5;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .container #root {
+    display: grid;
+    place-items: center;
+    width: -moz-max-content;
+    width: max-content;
+    margin-right: 1rem;
+  }
+  .profile-card, .settings-card {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    box-shadow: 0 0 5px 2px #2BB2F5;
+    border-radius: 0.25rem;
+    height: 80%;
+    width: 80%;
+    display: none;
+  }
+  .profile-card img, .settings-card img {
+    width: 70%;
+    height: 70%;
+    transform: translate(-50%);
+    left: 50%;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .profile-card .information-container, .settings-card .information-container {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background-color: hsl(0, 0%, 14%);
+    height: 30%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .profile-card .information-container p, .settings-card .information-container p {
+    color: white;
+    font-size: 1rem;
+    border: solid #2BB2F5 1px;
+    background-color: black;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .profile-card .settings-container, .settings-card .settings-container {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background-color: hsl(0, 0%, 14%);
+    height: 100%;
+    width: 100%;
+    border-radius: 0.25rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .profile-card .settings-container p, .settings-card .settings-container p {
+    color: white;
+    font-size: 2.6rem;
+    border-bottom: 1px solid white;
+  }
+  .profile-card .settings-container .settings-content, .settings-card .settings-container .settings-content {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  .profile-card .settings-container .settings-content .settings-area, .settings-card .settings-container .settings-content .settings-area {
+    border: solid #2BB2F5;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    background-color: black;
+    height: 20%;
+    width: 100%;
+  }
+  .profile-card .settings-container .settings-content .settings-area button, .settings-card .settings-container .settings-content .settings-area button {
+    border: solid #2BB2F5;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    background-color: black;
+  }
+  .profile-card .settings-container .settings-content .settings-area button:hover, .settings-card .settings-container .settings-content .settings-area button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+  }
+  .profile-card .settings-container .settings-content .color-settings, .settings-card .settings-container .settings-content .color-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .profile-card .settings-container .settings-content .color-settings p, .settings-card .settings-container .settings-content .color-settings p {
+    border: none;
+    font-size: 1rem;
+  }
+  .profile-card #profile-card-back, .profile-card #settings-card-back, .settings-card #profile-card-back, .settings-card #settings-card-back {
+    width: -moz-max-content;
+    width: max-content;
+    top: 3%;
+    left: 3%;
+    border: solid #2BB2F5;
+    background-color: black;
+    border-radius: 0.25rem;
+    position: absolute;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    color: white;
+    z-index: 1;
+  }
+  .profile-card #profile-card-back:hover, .profile-card #settings-card-back:hover, .settings-card #profile-card-back:hover, .settings-card #settings-card-back:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+  }
+  .graph-container {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    position: relative;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .graph-container p {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .graph-container button {
+    width: -moz-max-content;
+    width: max-content;
+    border: solid #2BB2F5;
+    background-color: black;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    color: white;
+  }
+  .graph-container button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+  }
+  text.title {
+    stroke: white;
+  }
+  text {
+    color: white;
+  }
+  .tick line {
+    stroke: white;
+    opacity: 0.3;
+  }
+  .annotations text {
+    stroke: white;
+  }
+  .origin {
+    stroke: white;
+    opacity: 0.6;
+  }
+  .domain {
+    stroke: white;
+    opacity: 0.6;
+  }
 }/*# sourceMappingURL=index_style.css.map */

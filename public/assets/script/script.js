@@ -1,6 +1,5 @@
 
 
-
 var counter = 0;
 
 function settings(){
@@ -26,19 +25,35 @@ function settings(){
     }
     else if(counter%2 == 1)
     {
+
+
+
+        if (window.matchMedia("(min-width: 1141px)").matches) {
+            document.querySelector("#root").style="filter: blur(2px)"
+            document.querySelector(".graph-input").style="filter: blur(2px)"
+            document.querySelector(".category-container").style="filter: blur(2px);"
+            document.querySelector(".user-coloumn h1").style="filter: blur(2px)"
+            document.querySelector(".settings-block").style="visibility:visible;transition-duration: 0.4s;width:100%;"
+            document.querySelector(".settings-container").style="width:12%;border:none;"
+        } 
+        else if(window.matchMedia("(min-width: 801px)").matches){
+            document.querySelector("#root").style="filter: blur(2px)"
+            document.querySelector(".graph-input").style="filter: blur(2px)"
+            document.querySelector(".category-container").style="filter: blur(2px);"
+            document.querySelector(".user-coloumn h1").style="filter: blur(2px)"
+            document.querySelector(".settings-block").style="visibility:visible;transition-duration: 0.4s;width:100%;"
+            document.querySelector(".settings-container").style="width:20%;border:none;"
+        }
+        else{
+            document.querySelector("#root").style="filter: blur(2px)"
+            document.querySelector(".graph-input").style="filter: blur(2px)"
+            document.querySelector(".category-container").style="filter: blur(2px);"
+            document.querySelector(".user-coloumn h1").style="filter: blur(2px)"
+            document.querySelector(".settings-block").style="visibility:visible;transition-duration: 0.4s;width:100%;"
+            document.querySelector(".settings-container").style="width:40%;border:none;"
+        }
         
-        document.querySelector("#root").style="filter: blur(2px)"
-        document.querySelector(".graph-input").style="filter: blur(2px)"
-        document.querySelector(".category-container").style="filter: blur(2px);"
-        document.querySelector(".user-coloumn h1").style="filter: blur(2px)"
         
-        document.querySelector(".settings-block").style="visibility:visible;transition-duration: 0.4s;width:100%;"
-        document.querySelector(".settings-container").style="width:12%;border:none;"
-
-
-
-
-
         iconShower()
     }
     
@@ -57,8 +72,16 @@ function calcOption(option){
     }
     document.getElementsByClassName('calculate-selection')[0].dataset.calc = option;
     
-    const chosenCalc = document.querySelector("." + option + "-container").style.display="block"
-    document.querySelector("calculate-selection").style="display:grid;place-items:center;"
+    const chosenCalc = document.querySelector("." + option + "-container").style="display:flex;flex-direction:column;gap: 10px;"
+}
+
+function calcBack(option){
+    var elements = document.querySelectorAll(".math-calc")
+    for (const element of elements){
+        element.style.display="block"
+    }
+    
+    const chosenCalc = document.querySelector("." + option + "-container").style="display:none;"
 }
 
 
@@ -87,13 +110,17 @@ function pageTheme(){
 function calculateReveal(){
     document.querySelector(".history-container").style="display: none;"
     document.querySelector(".calculate-container").style="display: flex;"
+    settings()
 }
+
 
 
 function historyReveal(){
     document.querySelector(".history-container").style="display: flex;"
     document.querySelector(".calculate-container").style="display: none;"
+    settings()
 }
+
 
 
 
@@ -265,34 +292,3 @@ function get_text(event)
     
         
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
