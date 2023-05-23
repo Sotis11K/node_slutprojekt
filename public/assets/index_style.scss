@@ -600,9 +600,6 @@ body{
    }
 
 @media only screen and (width <= 1140px){
-body{
-    background-color: midnightblue;
-}
     .container{
         display: flex;
         justify-content: space-between;
@@ -1191,9 +1188,6 @@ body{
 
 
 @media only screen and (width <= 800px){
-    body{
-        background-color: purple;
-    }
         .container{
             display: flex;
             justify-content: space-between;
